@@ -4,7 +4,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from collector.sources.public_clash import PUBLIC_CLASH_URL, fetch_text, parse_proxies
+from collector.sources.public_clash import fetch_candidates
 
 
 def main():
@@ -12,10 +12,10 @@ def main():
     parser.add_argument("--output", default="public-clash-candidates.json")
     parser.add_argument("--limit", type=int, default=50)
     args = parser.parse_args()
-    proxies = parse_proxies(fetch_text(), limit=max(1, min(args.limit, 100)))
+    source_url, proxies = fetch_candidates(limit=max(1, min(args.limit, 100)))
     payload = {
         "schema_version": 1,
-        "source": PUBLIC_CLASH_URL,
+        "source": source_url,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "count": len(proxies),
         "status": "pending_mihomo_egress_verification",

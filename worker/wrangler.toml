@@ -4,7 +4,7 @@ compatibility_date = "2026-11-20"
 
 [[kv_namespaces]]
 binding = "NODES"
-id = "REPLACE_WITH_NEW_KV_NAMESPACE_ID"
+id = "fc59a3da56f5416a8939ddd3dd16adef"
 
 [observability]
 enabled = true

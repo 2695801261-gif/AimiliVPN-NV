@@ -1,31 +1,28 @@
 # AimiliVPN-NV
 
-Independent no-VPS personal VPN node management system. This project independently implements publicly described concepts; it does not copy proprietary AimiliVPN modules.
+A small personal node collector. The target is one person's light use, not a public node directory or a large-scale VPN service.
 
-## Phase 1
+## Current implementation
 
-The first milestone provides a shared four-protocol data model, a VPNGate OpenVPN collector, a Cloudflare Worker API backed by a dedicated KV namespace, and GitHub Actions automation. It does not yet provide VPN tunnels or an Android APK.
+- Fetches the public VPNGate listing.
+- Parses its OpenVPN profiles, normalizes endpoint metadata, and removes duplicate endpoints.
+- Runs a small Python unit-test suite in GitHub Actions.
+- Optionally stores the latest candidate snapshot in a dedicated Cloudflare Worker KV namespace.
 
-## Architecture
+## Important protocol limitation
 
-- GitHub Actions / collector: fetch and normalize public VPNGate OpenVPN listings.
-- Cloudflare Worker / KV: authenticated management API and latest node snapshot.
-- Android (later): Android VpnService plus separately implemented and validated protocol adapters. The phone connects to real VPN endpoints; the Worker is not a VPN gateway.
+VPNGate currently supplies OpenVPN profiles. OpenVPN is not a Clash/Mihomo proxy protocol, and an OpenVPN endpoint must not be converted into a fake `proxies:` entry. The current `/api/subscription` endpoint returns authenticated JSON candidate data; it is not yet a Clash subscription URL and does not establish a VPN tunnel.
 
-## Protocol accuracy
+A Clash/Mihomo subscription requires actual Clash-compatible proxy nodes (for example, a source that provides a supported proxy URI/config), followed by Mihomo config validation and a real proxy/egress check. Until such a source is identified and tested, this project must not claim that a Clash subscription is ready.
 
-The model reserves openvpn, sstp, softether, and l2tp_ipsec. VPNGate's initial source supplies OpenVPN profiles only. OpenVPN over TCP remains OpenVPN; TCP is a transport, not SSTP. Do not relabel records.
+## Personal-use scope
 
-Android 13 removed the platform's built-in L2TP/IPsec VPN client. Target-device support requires a separately verified implementation and is not promised in this phase.
-
-## Layout
-
-- collector/: VPNGate fetch, parser, normalization, tests.
-- worker/: Cloudflare Worker API and KV storage.
-- schemas/: shared node schema.
-- protocols/: adapter contract and capability notes.
-- .github/workflows/: scheduled/manual collection and publishing.
-- docs/: phase and security notes.
+Keep the implementation intentionally small:
+- One or a few sources, rather than a large historical candidate pool.
+- Deduplicate and classify by country/protocol.
+- Publish only formats that match the actual source protocol.
+- Do not label ping/port reachability as a successful VPN connection.
+- No Android app, public multi-user service, large-scale rotation, or 1,000-node target in this milestone.
 
 ## Local checks
 
@@ -38,30 +35,23 @@ Fetch live VPNGate data:
 
     python collector/main.py --source vpngate --output nodes.json
 
-## Cloudflare setup (later in Phase 1)
+## Cloudflare setup (optional)
 
-1. Create a NEW KV namespace dedicated to this project. Do not reuse another project's namespace.
-2. In worker/wrangler.toml replace the placeholder namespace ID.
-3. Set Worker secret ADMIN_TOKEN with Wrangler; never commit it.
-4. Deploy from worker/.
-5. Add GitHub Actions secrets WORKER_URL and WORKER_ADMIN_TOKEN.
-6. Run the Collect and publish nodes workflow manually.
-
-KV binding name is NODES. This is intentionally separate from any existing Worker/KV setup.
+1. Use a dedicated KV namespace for this project.
+2. Set the Worker secret `ADMIN_TOKEN`; never commit it.
+3. Deploy from `worker/`.
+4. Add GitHub Actions secrets `WORKER_URL` and `WORKER_ADMIN_TOKEN` if snapshot publishing is wanted.
 
 ## API
 
-- GET /api/status: public health/version.
-- GET /api/nodes and GET /api/nodes/{id}: authenticated node data.
-- GET /api/stats: authenticated counts.
-- POST /api/refresh: authenticated refresh marker; GitHub Actions performs collection.
-- GET /api/config: authenticated capability declaration.
-- POST /api/nodes/import: authenticated snapshot import.
-- GET /api/subscription: authenticated JSON snapshot, not a tunnel.
+- `GET /api/status`: public health/version.
+- `GET /api/nodes`, `GET /api/nodes/{id}`, `GET /api/stats`: authenticated candidate data.
+- `POST /api/nodes/import`: authenticated snapshot import.
+- `GET /api/subscription`: authenticated JSON snapshot only; not a Clash/Mihomo subscription.
 
-Protected routes require Authorization: Bearer <ADMIN_TOKEN>.
+Protected routes require `Authorization: Bearer <ADMIN_TOKEN>`.
 
-## Security and truthfulness
+## Security
 
-Never commit credentials or private profiles. Public VPN endpoints are untrusted. A TCP check or source ping is not a successful VPN connection. Only a real protocol tunnel plus egress verification may become verified_connected. Use public nodes only where permitted.
-See docs/PHASE1.md and docs/SECURITY.md.
+Public VPN profiles are untrusted. Never commit credentials or private profiles. Only a real protocol tunnel plus egress verification can be called a verified connection. Use public endpoints only where permitted.
+See `docs/SECURITY.md`.

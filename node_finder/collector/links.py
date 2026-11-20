@@ -7,6 +7,7 @@ it may contain passwords, UUIDs, or private keys.
 import base64
 import hashlib
 import json
+from datetime import datetime, timezone
 from urllib.parse import urlsplit, unquote
 
 SCHEMES = {
@@ -91,6 +92,12 @@ def parse_link(line, source_id="manual"):
         "country_code": None,
         "country_source": "unknown",
         "status": "pending",
+        "discovered_at": datetime.now(timezone.utc).isoformat(),
+        "last_checked_at": None,
+        "latency_ms": None,
+        "egress_ip": None,
+        "test_location": None,
+        "failure_count": 0,
         "share_link": raw,
         "metadata": {}
     }

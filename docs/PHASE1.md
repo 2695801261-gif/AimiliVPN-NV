@@ -1,28 +1,27 @@
-# Phase 1 – implementation and acceptance
+# Personal MVP – implementation and acceptance
 
 ## Scope
-1. Independent repository and clean project layout.
-2. Shared node model for OpenVPN, SSTP, SoftEther, and L2TP/IPsec.
-3. VPNGate OpenVPN source parser, stable IDs, deduplication, and tests.
-4. Worker API with KV snapshot storage and bearer-token protection.
-5. GitHub Actions manual/scheduled collection and optional publishing.
+1. Fetch the VPNGate public listing.
+2. Normalize OpenVPN endpoint metadata, classify by country, and deduplicate.
+3. Run a small Python unit-test suite in GitHub Actions.
+4. Optionally publish the latest candidate snapshot to the project's dedicated Worker KV namespace.
+5. Retain the JSON snapshot briefly as a workflow artifact for manual inspection.
 
-## Not included
-- No Android APK or device-side tunnel implementation.
-- No claims of real connection based only on source listing, ping, or open TCP port.
-- No Cloudflare Worker acting as a VPN gateway.
-- No fabricated SSTP/SoftEther/L2TP nodes from VPNGate OpenVPN records.
+## Explicit limitations
+- This source currently provides OpenVPN profiles only.
+- OpenVPN profiles are not Clash/Mihomo proxy entries. Do not synthesize fake Clash YAML from them.
+- The Worker stores candidate metadata; it is not a VPN gateway.
+- The JSON API is not a Clash subscription URL.
+- A candidate's source ping or open port does not prove a successful VPN connection.
+- No Android app, public multi-user service, large historical pool, high-volume rotation, or fixed node-count target is part of this personal-use milestone.
 
 ## Acceptance
-- [x] Independent private repository.
-- [x] Four protocol identifiers in shared schema and Worker capability API.
-- [x] VPNGate parser explicitly classifies profiles as OpenVPN.
+- [x] VPNGate parser classifies records as OpenVPN.
 - [x] Duplicate endpoint records are collapsed.
-- [ ] Python unit tests pass in a clean runner.
-- [ ] Worker deployed with a newly created KV namespace and secret.
-- [ ] /api/status returns healthy.
-- [ ] Protected endpoints reject missing/wrong bearer token.
-- [ ] Authenticated import and list/stats endpoints work.
-- [ ] GitHub Actions manual run completes and publish succeeds after secrets are set.
+- [x] Unit tests pass locally.
+- [ ] GitHub Actions run passes on the hosted runner.
+- [ ] Optional Worker deployment and authenticated import/list are verified.
+- [ ] A Clash/Mihomo-compatible source is identified before promising a Clash subscription.
+- [ ] Mihomo config validation and a real proxy/egress test pass before any node is described as usable in Clash.
 
-The collector sets new records to pending. VPNGate score/ping are metadata only, not actual tunnel latency or verified connection state.
+The current collector emits candidates with status=pending. This is deliberate: no candidate is upgraded to a successful connection based on source metadata alone.

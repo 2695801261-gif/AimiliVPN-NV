@@ -5,6 +5,7 @@ A small personal node collector. The target is one person's light use, not a pub
 ## Current implementation
 
 - Fetches the public VPNGate listing.
+- Fetches up to 50 proxy candidates from a public Clash/Mihomo YAML feed (`radarhub.top`), preserving protocol-specific fields for later Mihomo checks.
 - Parses its OpenVPN profiles, normalizes endpoint metadata, and removes duplicate endpoints.
 - Runs a small Python unit-test suite in GitHub Actions.
 - Optionally stores the latest candidate snapshot in a dedicated Cloudflare Worker KV namespace.
@@ -13,7 +14,7 @@ A small personal node collector. The target is one person's light use, not a pub
 
 VPNGate currently supplies OpenVPN profiles. OpenVPN is not a Clash/Mihomo proxy protocol, and an OpenVPN endpoint must not be converted into a fake `proxies:` entry. The current `/api/subscription` endpoint returns authenticated JSON candidate data; it is not yet a Clash subscription URL and does not establish a VPN tunnel.
 
-A Clash/Mihomo subscription requires actual Clash-compatible proxy nodes (for example, a source that provides a supported proxy URI/config), followed by Mihomo config validation and a real proxy/egress check. Until such a source is identified and tested, this project must not claim that a Clash subscription is ready.
+A public Clash/Mihomo-compatible candidate feed is now wired into the scheduled collector. These are still untrusted, pending candidates: this project has not yet run its own Mihomo config validation or real proxy/egress test, so it does not publish them as working nodes or claim that a finished personal subscription is ready.
 
 ## Personal-use scope
 

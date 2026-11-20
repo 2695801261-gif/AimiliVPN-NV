@@ -20,6 +20,10 @@ Quality-first public proxy-node collector and subscription formatter for Mihomo/
 4. The existing dedicated AimiliVPN-NV Worker/KV is a candidate for metadata and subscription distribution after its API/schema is upgraded. Worker is not a proxy or VPN gateway.
 5. Formatters (Phase 3) generate separate, validated Mihomo YAML, Hiddify-compatible share-link subscriptions, and sing-box JSON.
 
+## Source registry
+
+`node_finder/sources.json` is intentionally empty until each source has been reviewed for format, update behavior, attribution/license, and data quality. The registry rejects non-HTTPS URLs, duplicate IDs, and unknown formats. Sources are disabled unless explicitly enabled. Do not bulk-add random subscription URLs.
+
 ## Phase 1 parser scope
 
 Implemented in this branch: common URI share-link syntax for Shadowsocks, VMess, VLESS, Trojan, Hysteria/Hysteria2, TUIC, AnyTLS, SOCKS, HTTP(S), SSH, Snell, and ShadowTLS.
@@ -30,7 +34,7 @@ Client capabilities are not identical. Each formatter must use an explicit compa
 
 ## Phases
 
-- Phase 1: schema, safe share-link parsing, source registry contract, fixtures, and unit tests.
+- Phase 1: schema, safe share-link parsing (including base64 subscription text), HTTPS source-registry contract, fixtures, and unit tests.
 - Phase 2: curated source collection and protocol-aware real-connection verification.
 - Phase 3: Mihomo/Hiddify/sing-box output adapters and subscription endpoints.
 - Phase 4: scheduled refresh, stale-node retirement, health history, and phone acceptance tests.

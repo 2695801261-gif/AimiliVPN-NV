@@ -1,5 +1,12 @@
 # Project status — 2026-11-20
 
+## Cloudflare KV namespace
+
+- User supplied new namespace ID: `50755dd4ca104741bf4ddd72c6cdd1fe`.
+- Added `node_finder/cloudflare/wrangler.toml` with binding `NODE_FINDER_KV` pointing to that ID.
+- The ID has not been independently verified against the Cloudflare account; user supplied it.
+- No Worker deployment or secret configuration has happened yet.
+
 ## Current branch
 
 `feature/global-node-finder-phase1`

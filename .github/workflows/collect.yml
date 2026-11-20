@@ -26,6 +26,7 @@ jobs:
       - name: Collect VPNGate snapshot
         run: python collector/main.py --source vpngate --output nodes.json
       - name: Fetch small Mihomo-compatible public candidate set
+        continue-on-error: true
         run: python collector/fetch_public_clash.py --output public-clash-candidates.json --limit 50
       - name: Save collection snapshots for personal inspection
         if: always()
@@ -54,4 +55,5 @@ jobs:
       - name: Write summary
         if: always()
         run: |
-          if [ -f nodes.json ]; then python -c 'import json; d=json.load(open("nodes.json")); print("Collected candidates:", d.get("count", 0))' >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ -f nodes.json ]; then python -c 'import json; d=json.load(open("nodes.json")); print("VPNGate OpenVPN candidates:", d.get("count", 0))' >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ -f public-clash-candidates.json ]; then python -c 'import json; d=json.load(open("public-clash-candidates.json")); print("Public Mihomo candidates:", d.get("count", 0)); print("Feed:", d.get("source", "unknown"))' >> "$GITHUB_STEP_SUMMARY"; else echo 'Public Mihomo feed unavailable this run; VPNGate collection remains usable.' >> "$GITHUB_STEP_SUMMARY"; fi

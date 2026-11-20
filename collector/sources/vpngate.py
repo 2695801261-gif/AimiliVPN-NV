@@ -14,5 +14,5 @@ def fetch_csv(timeout=20):
     return text
 
 def parse_csv(text):
-    lines = [line for line in text.splitlines() if line and not line.startswith("*")]
+    lines = [line for line in text.splitlines() if line and not line.startswith("*") and (not line.startswith("#") or line.lower().startswith("#hostname"))]
     return list(csv.DictReader(io.StringIO("\n".join(lines)))) if lines else []

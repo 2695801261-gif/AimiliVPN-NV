@@ -5,7 +5,7 @@ A small personal node collector. The target is one person's light use, not a pub
 ## Current implementation
 
 - Fetches the public VPNGate listing.
-- Fetches up to 50 proxy candidates from a public Clash/Mihomo YAML feed (two public Clash/Mihomo feeds (nodesfree and 735754647/Free-Nodes, tried in order)), preserving protocol-specific fields for later Mihomo checks.
+- Fetches up to 50 proxy candidates from two public Clash/Mihomo YAML feeds (nodesfree first, 735754647/Free-Nodes as fallback), preserving protocol-specific fields for later Mihomo checks.
 - Parses its OpenVPN profiles, normalizes endpoint metadata, and removes duplicate endpoints.
 - Runs a small Python unit-test suite in GitHub Actions.
 - Optionally stores the latest candidate snapshot in a dedicated Cloudflare Worker KV namespace.
@@ -27,7 +27,7 @@ Keep the implementation intentionally small:
 
 ## Local checks
 
-Python 3.11+; standard library only.
+Python 3.11+ and PyYAML 6.x (`python -m pip install 'PyYAML>=6,<7'`).
 
     python -m unittest discover -s collector/tests -v
     python collector/main.py --source sample --output nodes.json

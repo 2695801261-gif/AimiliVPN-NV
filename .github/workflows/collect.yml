@@ -19,16 +19,22 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install YAML parser for public Mihomo feed
+        run: python -m pip install 'PyYAML>=6.0,<7'
       - name: Run collector unit tests
         run: python -m unittest discover -s collector/tests -v
       - name: Collect VPNGate snapshot
         run: python collector/main.py --source vpngate --output nodes.json
-      - name: Save collection snapshot for personal inspection
+      - name: Fetch small Mihomo-compatible public candidate set
+        run: python collector/fetch_public_clash.py --output public-clash-candidates.json --limit 50
+      - name: Save collection snapshots for personal inspection
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: personal-node-snapshot
-          path: nodes.json
+          path: |
+            nodes.json
+            public-clash-candidates.json
           if-no-files-found: ignore
           retention-days: 3
       - name: Publish candidate snapshot to Worker

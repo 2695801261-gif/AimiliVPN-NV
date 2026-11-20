@@ -1,9 +1,0 @@
-name = "node-finder-publisher"
-main = "worker.js"
-compatibility_date = "2026-11-20"
-
-# Create a NEW KV namespace for this project.
-# Do not reuse the namespace used by CFnew or the legacy AimiliVPN-NV API.
-[[kv_namespaces]]
-binding = "NODE_FINDER_KV"
-id = "REPLACE_WITH_NEW_KV_NAMESPACE_ID"

@@ -1,9 +1,0 @@
-name = "node-finder-publisher"
-main = "worker.js"
-compatibility_date = "2026-11-20"
-
-# Dedicated namespace created for node-finder.
-# Do not replace this with the legacy NODES or CFnew namespace.
-[[kv_namespaces]]
-binding = "NODE_FINDER_KV"
-id = "50755dd4ca104741bf4ddd72c6cdd1fe"

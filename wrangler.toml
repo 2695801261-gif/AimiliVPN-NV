@@ -1,8 +1,0 @@
-name = "node-finder-publisher"
-main = "node_finder/cloudflare/worker.js"
-compatibility_date = "2026-11-20"
-
-# Dedicated namespace for node-finder. Keep separate from legacy Workers.
-[[kv_namespaces]]
-binding = "NODE_FINDER_KV"
-id = "50755dd4ca104741bf4ddd72c6cdd1fe"

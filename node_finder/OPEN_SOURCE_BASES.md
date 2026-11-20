@@ -13,11 +13,15 @@ Why it is relevant:
 - Docker image and Windows/Linux/macOS options.
 - Advertises ISP type and residential/datacenter classification.
 
-Decision: **evaluate as the first candidate to reuse**, rather than implementing a full checker ourselves. Before adoption, inspect source code and license, exact protocol-core implementation, how it obtains egress IP, how it classifies residential vs hosting, and its minimum memory/CPU requirements. Do not treat marketing labels as proof.
+License/repo check: GitHub repository metadata currently reports GPL-3.0, Go, public repository, and active pushes. The README documents Docker image deployment, default WebUI port 8199, an API key, Mihomo and sing-box output, Android subs-free client, ISP type and residential/datacenter analysis. The Docker Hub listing documents 8299/8199 ports and the same advertised classification.
+
+Decision: **evaluate as the first candidate to reuse**, rather than implementing a full checker ourselves. The license is copyleft: if we modify and distribute a derivative, GPL-3.0 obligations apply; keep it as a separately deployed upstream component unless we deliberately accept those obligations. Before adoption, inspect source code and license, exact protocol-core implementation, how it obtains egress IP, how it classifies residential vs hosting, and its minimum memory/CPU requirements. Do not treat marketing labels as proof.
 
 ## 2. OpenASN — IP-origin classification data
 
 Repository: https://github.com/openasn/openasn
+
+License check: GitHub metadata reports the repository code as MIT; the project README separately states its core data artifacts and overrides are CC0. Keep code and data licenses distinct and follow the artifact's own manifest/attribution.
 
 Why it is relevant:
 - Offline IP-origin classification: residential ISP, hosting, VPN, Tor, relay, business, unknown.

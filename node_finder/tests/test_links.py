@@ -34,6 +34,15 @@ class LinkParserTests(unittest.TestCase):
         self.assertEqual(nodes, [])
         self.assertNotIn("secret", str(errors))
 
+    def test_base64_subscription(self):
+        import base64
+        raw = "vless://00000000-0000-0000-0000-000000000000@example.com:443"
+        encoded = base64.urlsafe_b64encode(raw.encode()).decode().rstrip("=")
+        nodes, errors = parse_text(encoded, source_id="fixture")
+        self.assertEqual(len(nodes), 1)
+        self.assertEqual(nodes[0]["protocol"], "vless")
+        self.assertEqual(errors, [])
+
     def test_deduplication(self):
         link = "trojan://fake-password@example.com:443"
         nodes, errors = parse_text(link + "\n" + link, source_id="fixture")

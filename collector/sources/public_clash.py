@@ -5,7 +5,7 @@ Candidates remain unverified until the project runs its own Mihomo egress checks
 import json
 import urllib.request
 
-PUBLIC_CLASH_URL = "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/all-verified/clash-0001.yaml"
+PUBLIC_CLASH_URL = "https://radarhub.top/clash.yaml"
 SUPPORTED_TYPES = {"ss", "vmess", "vless", "trojan", "hysteria", "hysteria2", "tuic", "anytls"}
 
 

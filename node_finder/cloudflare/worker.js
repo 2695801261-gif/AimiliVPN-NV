@@ -1,9 +1,11 @@
-const VERSION = "0.1.0";
+const VERSION = "0.1.1";
 const CATEGORIES = new Set([
   "us-residential",
   "other-residential",
   "datacenter-low-risk",
 ]);
+const STORAGE_FILES = new Set(["all.yaml", "mihomo.yaml", "base64.txt", "history.yaml"]);
+
 const json = (body, status = 200) =>
   new Response(JSON.stringify(body), {
     status,
@@ -54,6 +56,45 @@ function validYamlMap(value) {
   return Object.keys(value).length > 0;
 }
 
+async function handleUpstreamStorage(request, url, env) {
+  const supplied = url.searchParams.get("token") || "";
+  if (!env.AUTH_TOKEN || supplied !== env.AUTH_TOKEN) {
+    return json({ code: 401, message: "unauthorized" }, 401);
+  }
+
+  const filename = url.searchParams.get("filename");
+  if (request.method === "GET") {
+    if (!filename || !STORAGE_FILES.has(filename)) {
+      return json({ code: 400, message: "invalid filename" }, 400);
+    }
+    const value = await env.NODE_FINDER_KV.get(`upstream-file:${filename}`);
+    if (value === null) return json({ code: 404, message: "file not found" }, 404);
+    return text(value);
+  }
+
+  if (request.method === "POST") {
+    let body;
+    try {
+      body = await request.json();
+    } catch {
+      return json({ code: 400, message: "invalid json" }, 400);
+    }
+    if (
+      !body ||
+      !STORAGE_FILES.has(body.filename) ||
+      typeof body.value !== "string" ||
+      body.value.length === 0 ||
+      body.value.length > 2_000_000
+    ) {
+      return json({ code: 400, message: "invalid filename or value" }, 400);
+    }
+    await env.NODE_FINDER_KV.put(`upstream-file:${body.filename}`, body.value);
+    return json({ code: 200, message: "data stored" });
+  }
+
+  return json({ code: 405, message: "method not allowed" }, 405);
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -70,6 +111,12 @@ export default {
 
     if (!env.NODE_FINDER_KV) {
       return json({ error: "missing_kv_binding" }, 500);
+    }
+
+    // Compatibility adapter for Subs-Check PRO's documented save-method: r2 API.
+    // It stores the same filenames in this project's isolated KV namespace.
+    if (path === "/storage") {
+      return handleUpstreamStorage(request, url, env);
     }
 
     if (request.method === "GET" && path.startsWith("/sub/")) {

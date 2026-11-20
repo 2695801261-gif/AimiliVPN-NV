@@ -1,6 +1,5 @@
 """Fetch small, public Clash/Mihomo feeds without trusting their proxy health claims."""
 import json
-import urllib.error
 import urllib.request
 
 PUBLIC_CLASH_URLS = (

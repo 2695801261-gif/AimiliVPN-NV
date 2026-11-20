@@ -102,7 +102,23 @@ def parse_link(line, source_id="manual"):
         "metadata": {}
     }
 
+def decode_subscription_text(text):
+    """Decode a whole base64 subscription only when it clearly contains share links."""
+    stripped = text.strip()
+    if not stripped or "://" in stripped:
+        return text
+    compact = "".join(stripped.split())
+    try:
+        decoded = _decode_b64(compact)
+    except Exception:
+        return text
+    prefixes = tuple(scheme + "://" for scheme in SCHEMES)
+    if any(line.strip().lower().startswith(prefixes) for line in decoded.splitlines()):
+        return decoded
+    return text
+
 def parse_text(text, source_id="manual"):
+    text = decode_subscription_text(text)
     nodes, errors = [], []
     for number, line in enumerate(text.splitlines(), 1):
         if not line.strip() or line.lstrip().startswith("#"):

@@ -32,8 +32,8 @@ def validate_registry(document):
         seen.add(source_id)
         url = item.get("url")
         parsed = urlsplit(url if isinstance(url, str) else "")
-        if parsed.scheme != "https" or not parsed.hostname:
-            raise ValueError("source URL must use HTTPS")
+        if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password or parsed.fragment:
+            raise ValueError("source URL must be HTTPS and contain no embedded credentials or fragment")
         fmt = item.get("format")
         if fmt not in SOURCE_FORMATS:
             raise ValueError("unsupported source format")

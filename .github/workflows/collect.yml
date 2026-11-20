@@ -19,6 +19,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Run collector unit tests
+        run: python -m unittest discover -s collector/tests -v
       - name: Collect VPNGate snapshot
         run: python collector/main.py --source vpngate --output nodes.json
       - name: Publish snapshot to Worker

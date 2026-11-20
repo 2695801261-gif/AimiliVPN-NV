@@ -5,7 +5,7 @@ A small personal node collector. The target is one person's light use, not a pub
 ## Current implementation
 
 - Fetches the public VPNGate listing.
-- Fetches up to 50 proxy candidates from a public Clash/Mihomo YAML feed (`radarhub.top`), preserving protocol-specific fields for later Mihomo checks.
+- Fetches up to 50 proxy candidates from a public Clash/Mihomo YAML feed (two public Clash/Mihomo feeds (nodesfree and 735754647/Free-Nodes, tried in order)), preserving protocol-specific fields for later Mihomo checks.
 - Parses its OpenVPN profiles, normalizes endpoint metadata, and removes duplicate endpoints.
 - Runs a small Python unit-test suite in GitHub Actions.
 - Optionally stores the latest candidate snapshot in a dedicated Cloudflare Worker KV namespace.
@@ -14,7 +14,7 @@ A small personal node collector. The target is one person's light use, not a pub
 
 VPNGate currently supplies OpenVPN profiles. OpenVPN is not a Clash/Mihomo proxy protocol, and an OpenVPN endpoint must not be converted into a fake `proxies:` entry. The current `/api/subscription` endpoint returns authenticated JSON candidate data; it is not yet a Clash subscription URL and does not establish a VPN tunnel.
 
-A public Clash/Mihomo-compatible candidate feed is now wired into the scheduled collector. These are still untrusted, pending candidates: this project has not yet run its own Mihomo config validation or real proxy/egress test, so it does not publish them as working nodes or claim that a finished personal subscription is ready.
+Two public Clash/Mihomo-compatible candidate feeds are wired as primary/fallback inputs to the scheduled collector. The collector accepts the first feed that downloads and yields supported proxy entries; it does not merge or blindly trust every source. These are still untrusted, pending candidates: this project has not yet run its own Mihomo config validation or real proxy/egress test, so it does not publish them as working nodes or claim that a finished personal subscription is ready.
 
 ## Personal-use scope
 

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Global Node Finder record",
+  "type": "object",
+  "required": ["id", "source_id", "protocol", "endpoint", "status", "discovered_at"],
+  "properties": {
+    "id": {"type": "string", "minLength": 16, "maxLength": 64},
+    "source_id": {"type": "string", "minLength": 1},
+    "protocol": {"enum": ["shadowsocks", "shadowsocksr", "vmess", "vless", "trojan", "hysteria", "hysteria2", "tuic", "anytls", "socks", "http", "https", "ssh", "snell", "shadowtls", "wireguard", "openvpn"]},
+    "transport": {"type": ["string", "null"]},
+    "endpoint": {
+      "type": "object",
+      "required": ["host", "port"],
+      "properties": {
+        "host": {"type": "string", "minLength": 1},
+        "port": {"type": "integer", "minimum": 1, "maximum": 65535}
+      },
+      "additionalProperties": false
+    },
+    "name": {"type": ["string", "null"]},
+    "country_code": {"type": ["string", "null"], "pattern": "^[A-Z]{2}$"},
+    "country_source": {"enum": ["source_hint", "ip_geo", "unknown"]},
+    "status": {"enum": ["pending", "preliminary_available", "verified_connected", "failed", "stale", "rejected"]},
+    "discovered_at": {"type": "string", "format": "date-time"},
+    "last_checked_at": {"type": ["string", "null"]},
+    "latency_ms": {"type": ["integer", "null"], "minimum": 0},
+    "egress_ip": {"type": ["string", "null"]},
+    "test_location": {"type": ["string", "null"]},
+    "failure_count": {"type": "integer", "minimum": 0},
+    "share_link": {"type": ["string", "null"], "description": "Sensitive connection material. Never log or expose except through an authorized subscription response."},
+    "metadata": {"type": "object"}
+  },
+  "additionalProperties": false
+}

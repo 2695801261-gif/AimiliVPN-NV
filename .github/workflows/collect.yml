@@ -30,7 +30,7 @@ jobs:
         run: python -m collector.main --source vpngate --output nodes.json
       - name: Fetch small Mihomo-compatible public candidate set
         continue-on-error: true
-        run: python -m collector.fetch_public_clash --output public-clash-candidates.json --limit 50
+        run: python -m collector.fetch_public_clash --output public-clash-candidates.json --limit 200
       - name: Install official Mihomo binary
         if: ${{ hashFiles('public-clash-candidates.json') != '' }}
         run: |
@@ -51,7 +51,7 @@ jobs:
         if: ${{ hashFiles('public-clash-candidates.json') != '' }}
         continue-on-error: true
         run: |
-          python collector/verify_mihomo.py --mihomo /tmp/mihomo --input public-clash-candidates.json --output verified-clash-candidates.json --limit 20 --egress-attempts 2
+          python collector/verify_mihomo.py --mihomo /tmp/mihomo --input public-clash-candidates.json --output verified-clash-candidates.json --limit 40 --egress-attempts 2
       - name: Build verified-only Mihomo subscription
         if: ${{ hashFiles('verified-clash-candidates.json') != '' }}
         run: python -m collector.build_subscription --input verified-clash-candidates.json --output mihomo-subscription.yaml

@@ -21,9 +21,18 @@ def build_subscription(snapshot):
 
     output, names = [], set()
     for index, source in enumerate(proxies, 1):
+        # Fail closed: never silently drop a malformed entry while retaining the
+        # original verified_count, which could make publication metadata inaccurate.
         if not isinstance(source, dict):
-            continue
+            raise ValueError(f"verified proxy entry {index} is not an object")
         proxy = dict(source)
+        if not isinstance(proxy.get("server"), str) or not proxy["server"].strip():
+            raise ValueError(f"verified proxy entry {index} has no valid server")
+        if isinstance(proxy.get("port"), bool) or not isinstance(proxy.get("port"), int) or not 1 <= proxy["port"] <= 65535:
+            raise ValueError(f"verified proxy entry {index} has no valid port")
+        if not isinstance(proxy.get("type"), str) or not proxy["type"].strip():
+            raise ValueError(f"verified proxy entry {index} has no valid type")
+
         base = re.sub(r"[^A-Za-z0-9_.-]+", "-", str(proxy.get("name") or f"Verified-{index}")).strip("-.")
         if not base:
             base = f"Verified-{index}"
@@ -35,8 +44,8 @@ def build_subscription(snapshot):
         proxy["name"] = name
         output.append(proxy)
 
-    if not output:
-        raise ValueError("no usable proxy entries in verified snapshot")
+    if len(output) != snapshot["verified_count"]:
+        raise ValueError("published proxy count does not match verified_count")
 
     proxy_names = [item["name"] for item in output]
     document = {

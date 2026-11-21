@@ -8,13 +8,14 @@ A small personal node collector. The target is one person's light use, not a pub
 - Fetches up to 50 proxy candidates from two public Clash/Mihomo YAML feeds (nodesfree first, 735754647/Free-Nodes as fallback), preserving protocol-specific fields for later Mihomo checks.
 - Parses its OpenVPN profiles, normalizes endpoint metadata, and removes duplicate endpoints.
 - Runs a small Python unit-test suite in GitHub Actions.
+- Uses the official Mihomo Linux binary to validate candidate configs, start one proxy at a time, and check a public egress-IP endpoint; only candidates that pass both config validation and proxied egress are written to the verified snapshot.
 - Optionally stores the latest candidate snapshot in a dedicated Cloudflare Worker KV namespace.
 
 ## Important protocol limitation
 
 VPNGate currently supplies OpenVPN profiles. OpenVPN is not a Clash/Mihomo proxy protocol, and an OpenVPN endpoint must not be converted into a fake `proxies:` entry. The current `/api/subscription` endpoint returns authenticated JSON candidate data; it is not yet a Clash subscription URL and does not establish a VPN tunnel.
 
-Two public Clash/Mihomo-compatible candidate feeds are wired as primary/fallback inputs to the scheduled collector. The collector accepts the first feed that downloads and yields supported proxy entries; it does not merge or blindly trust every source. These are still untrusted, pending candidates: this project has not yet run its own Mihomo config validation or real proxy/egress test, so it does not publish them as working nodes or claim that a finished personal subscription is ready.
+Two public Clash/Mihomo-compatible candidate feeds are wired as primary/fallback inputs to the scheduled collector. The collector accepts the first feed that downloads and yields supported proxy entries; it does not merge or blindly trust every source. Candidates are tested one at a time by Mihomo in GitHub Actions (currently capped at 20 per run). The verifier runs Mihomo's config test, starts an isolated local HTTP proxy for that one candidate, and requests a public IP through that proxy. It writes `verified-clash-candidates.json` separately; candidates that only pass parsing or port checks are never promoted. The first hosted workflow run is still required to confirm the runner-side download, protocol support, and real egress results.
 
 ## Personal-use scope
 
@@ -30,6 +31,7 @@ Keep the implementation intentionally small:
 Python 3.11+ and PyYAML 6.x (`python -m pip install 'PyYAML>=6,<7'`).
 
     python -m unittest discover -s collector/tests -v
+    python collector/verify_mihomo.py --mihomo ./mihomo --input public-clash-candidates.json --output verified-clash-candidates.json --limit 20
     python collector/main.py --source sample --output nodes.json
 
 Fetch live VPNGate data:

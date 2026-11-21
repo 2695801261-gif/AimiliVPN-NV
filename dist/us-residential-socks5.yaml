@@ -1,48 +1,48 @@
 # Auto-generated. Public unauthenticated SOCKS5 proxies; do not use for sensitive accounts.
-# Generated at: 2026-11-21T14:34:13Z
+# Generated at: 2026-11-21T20:53:31Z
 proxies:
-  - name: "US-ISP-001 BrightRidge Johnson City"
+  - name: "US-ISP-001 Arbuckle Communications, LLC Lone Grove"
     type: socks5
-    server: 152.86.78.16
+    server: 68.233.8.123
     port: 1080
     udp: true
-  - name: "US-ISP-002 Cox Communications Inc. Irvine"
+  - name: "US-ISP-002 Aureon Network Services Boone"
     type: socks5
-    server: 72.195.114.184
-    port: 4145
-    udp: true
-  - name: "US-ISP-003 Gainesville Regional Utilities Gainesville"
-    type: socks5
-    server: 66.231.128.103
+    server: 216.51.177.106
     port: 1080
     udp: true
-  - name: "US-ISP-004 ITGLOBAL.COM NL B.V. Newark"
+  - name: "US-ISP-003 Central Utah Telephone, Inc. American Fork"
     type: socks5
-    server: 31.44.5.192
-    port: 1081
-    udp: true
-  - name: "US-ISP-005 KAMO Electric Cooperative Anderson"
-    type: socks5
-    server: 206.246.26.1
+    server: 64.72.211.57
     port: 1080
     udp: true
-  - name: "US-ISP-006 KAMO Electric Cooperative Anderson"
+  - name: "US-ISP-004 Cox Communications Inc. Phoenix"
     type: socks5
-    server: 206.246.26.65
+    server: 72.223.61.88
     port: 1080
+    udp: true
+  - name: "US-ISP-005 Indigital Telecom Goshen"
+    type: socks5
+    server: 66.170.46.17
+    port: 1080
+    udp: true
+  - name: "US-ISP-006 JAB Wireless, INC. Princeton"
+    type: socks5
+    server: 67.210.146.50
+    port: 11080
     udp: true
   - name: "US-ISP-007 Level 3 Communications, Inc. Chicago"
     type: socks5
     server: 8.40.19.147
     port: 1080
     udp: true
-  - name: "US-ISP-008 TDS TELECOM Bend"
+  - name: "US-ISP-008 NetLab Global Los Angeles"
     type: socks5
-    server: 67.204.153.223
+    server: 154.29.145.165
     port: 1080
     udp: true
-  - name: "US-ISP-009 Uniti Fiber Holdings Inc. Gulfport"
+  - name: "US-ISP-009 Spectrum Austin"
     type: socks5
-    server: 142.190.95.154
+    server: 71.78.199.161
     port: 1080
     udp: true

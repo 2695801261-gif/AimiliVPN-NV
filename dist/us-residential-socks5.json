@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T14:34:13Z",
+  "generated_at": "2026-11-21T20:53:31Z",
   "count": 9,
   "criteria": [
     "United States",
@@ -15,63 +15,63 @@
   },
   "nodes": [
     {
-      "name": "US - BrightRidge - Johnson City",
-      "server": "152.86.78.16",
+      "name": "US - Arbuckle Communications, LLC - Lone Grove",
+      "server": "68.233.8.123",
       "port": 1080,
-      "isp": "BrightRidge",
-      "asn": "AS22987 BrightRidge",
-      "city": "Johnson City",
-      "region": "Tennessee",
+      "isp": "Arbuckle Communications, LLC",
+      "asn": "AS54075 Arbuckle Communications, LLC",
+      "city": "Lone Grove",
+      "region": "Oklahoma",
       "country": "United States"
     },
     {
-      "name": "US - Cox Communications Inc. - Irvine",
-      "server": "72.195.114.184",
-      "port": 4145,
+      "name": "US - Aureon Network Services - Boone",
+      "server": "216.51.177.106",
+      "port": 1080,
+      "isp": "Aureon Network Services",
+      "asn": "AS5056 Aureon Network Services",
+      "city": "Boone",
+      "region": "Iowa",
+      "country": "United States"
+    },
+    {
+      "name": "US - Central Utah Telephone, Inc. - American Fork",
+      "server": "64.72.211.57",
+      "port": 1080,
+      "isp": "Central Utah Telephone, Inc.",
+      "asn": "AS36103 Central Utah Telephone, Inc.",
+      "city": "American Fork",
+      "region": "Utah",
+      "country": "United States"
+    },
+    {
+      "name": "US - Cox Communications Inc. - Phoenix",
+      "server": "72.223.61.88",
+      "port": 1080,
       "isp": "Cox Communications Inc.",
       "asn": "AS22773 Cox Communications Inc.",
-      "city": "Irvine",
-      "region": "California",
+      "city": "Phoenix",
+      "region": "Arizona",
       "country": "United States"
     },
     {
-      "name": "US - Gainesville Regional Utilities - Gainesville",
-      "server": "66.231.128.103",
+      "name": "US - Indigital Telecom - Goshen",
+      "server": "66.170.46.17",
       "port": 1080,
-      "isp": "Gainesville Regional Utilities",
-      "asn": "AS10674 Gainesville Regional Utilities",
-      "city": "Gainesville",
-      "region": "Florida",
+      "isp": "Indigital Telecom",
+      "asn": "AS16698 NP Tech",
+      "city": "Goshen",
+      "region": "Indiana",
       "country": "United States"
     },
     {
-      "name": "US - ITGLOBAL.COM NL B.V. - Newark",
-      "server": "31.44.5.192",
-      "port": 1081,
-      "isp": "ITGLOBAL.COM NL B.V.",
-      "asn": "AS208951 ITGLOBAL.COM",
-      "city": "Newark",
-      "region": "New Jersey",
-      "country": "United States"
-    },
-    {
-      "name": "US - KAMO Electric Cooperative - Anderson",
-      "server": "206.246.26.1",
-      "port": 1080,
-      "isp": "KAMO Electric Cooperative",
-      "asn": "AS27258 KAMO Electric Cooperative, Inc.",
-      "city": "Anderson",
-      "region": "Missouri",
-      "country": "United States"
-    },
-    {
-      "name": "US - KAMO Electric Cooperative - Anderson",
-      "server": "206.246.26.65",
-      "port": 1080,
-      "isp": "KAMO Electric Cooperative",
-      "asn": "AS27258 KAMO Electric Cooperative, Inc.",
-      "city": "Anderson",
-      "region": "Missouri",
+      "name": "US - JAB Wireless, INC. - Princeton",
+      "server": "67.210.146.50",
+      "port": 11080,
+      "isp": "JAB Wireless, INC.",
+      "asn": "AS17306 JAB Wireless, INC.",
+      "city": "Princeton",
+      "region": "Texas",
       "country": "United States"
     },
     {
@@ -85,23 +85,23 @@
       "country": "United States"
     },
     {
-      "name": "US - TDS TELECOM - Bend",
-      "server": "67.204.153.223",
+      "name": "US - NetLab Global - Los Angeles",
+      "server": "154.29.145.165",
       "port": 1080,
-      "isp": "TDS TELECOM",
-      "asn": "AS4181 TDS TELECOM",
-      "city": "Bend",
-      "region": "Oregon",
+      "isp": "NetLab Global",
+      "asn": "AS979 NetLab Global",
+      "city": "Los Angeles",
+      "region": "California",
       "country": "United States"
     },
     {
-      "name": "US - Uniti Fiber Holdings Inc. - Gulfport",
-      "server": "142.190.95.154",
+      "name": "US - Spectrum - Austin",
+      "server": "71.78.199.161",
       "port": 1080,
-      "isp": "Uniti Fiber Holdings Inc.",
-      "asn": "AS13760 Uniti Fiber Holdings Inc.",
-      "city": "Gulfport",
-      "region": "Mississippi",
+      "isp": "Spectrum",
+      "asn": "AS11427 Charter Communications Inc",
+      "city": "Austin",
+      "region": "Texas",
       "country": "United States"
     }
   ]

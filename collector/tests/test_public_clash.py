@@ -43,7 +43,7 @@ proxies:
 
     def test_requires_proxies_list(self):
         with self.assertRaises(ValueError):
-            parse_proxies("port: 7890\\n")
+            parse_proxies("port: 7890\n")
 
     def test_limit_is_respected(self):
         text = """
@@ -66,7 +66,7 @@ proxies:
 
     @patch("collector.sources.public_clash.fetch_text")
     def test_falls_back_to_second_source(self, fetch_text):
-        valid = "proxies:\\n  - name: ok\\n    type: ss\\n    server: node.example\\n    port: 443\\n    cipher: aes-128-gcm\\n    password: p\\n"
+        valid = """proxies:\n  - name: ok\n    type: ss\n    server: node.example\n    port: 443\n    cipher: aes-128-gcm\n    password: p\n"""
         fetch_text.side_effect = [ValueError("first source down"), valid]
         source, nodes = fetch_candidates(urls=("https://first.invalid", "https://second.invalid"))
         self.assertEqual(source, "https://second.invalid")

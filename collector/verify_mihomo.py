@@ -1,4 +1,4 @@
-"""Verify public Clash candidates with a real Mihomo tunnel and public egress check."""
+"""Verify public Clash candidates with an isolated Mihomo tunnel and public egress checks."""
 import argparse
 import ipaddress
 import json
@@ -7,11 +7,14 @@ import socket
 import subprocess
 import tempfile
 import time
+import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
+
+EGRESS_URLS = ("https://api.ipify.org", "https://icanhazip.com")
 
 
 def build_config(proxy, mixed_port):
@@ -51,21 +54,30 @@ def wait_for_listener(host, port, process, timeout):
     raise TimeoutError("Mihomo local proxy port did not become ready")
 
 
-def request_egress(port, timeout):
+def request_egress(port, timeout, urls=EGRESS_URLS, attempts=2):
+    """Require a public IP returned through the local Mihomo proxy, retrying transient failures."""
     proxy_url = f"http://127.0.0.1:{port}"
     opener = urllib.request.build_opener(
         urllib.request.ProxyHandler({"http": proxy_url, "https": proxy_url})
     )
-    request = urllib.request.Request(
-        "https://api.ipify.org",
-        headers={"User-Agent": "AimiliVPN-NV-verifier/0.1"},
-    )
-    with opener.open(request, timeout=timeout) as response:
-        value = response.read(128).decode("ascii", errors="replace")
-    address = parse_public_ip(value)
-    if not address:
-        raise RuntimeError("Egress endpoint did not return a globally routable IP")
-    return address
+    errors = []
+    for attempt in range(max(1, attempts)):
+        for url in urls:
+            request = urllib.request.Request(
+                url, headers={"User-Agent": "AimiliVPN-NV-verifier/0.2"}
+            )
+            try:
+                with opener.open(request, timeout=timeout) as response:
+                    value = response.read(128).decode("ascii", errors="replace")
+                address = parse_public_ip(value)
+                if address:
+                    return address
+                errors.append(f"{url}: response was not a globally routable IP")
+            except Exception as exc:
+                errors.append(f"{url}: {type(exc).__name__}: {exc}")
+        if attempt + 1 < max(1, attempts):
+            time.sleep(0.5)
+    raise RuntimeError("No public egress IP received through Mihomo: " + " | ".join(errors[-4:]))
 
 
 def verify_one(proxy, mihomo_bin, mixed_port, startup_timeout, request_timeout):
@@ -82,7 +94,7 @@ def verify_one(proxy, mihomo_bin, mixed_port, startup_timeout, request_timeout):
             [mihomo_bin, "-t", "-d", workdir, "-f", str(config_path)],
             capture_output=True,
             text=True,
-            timeout=15,
+            timeout=20,
         )
         if check.returncode != 0:
             detail = (check.stderr or check.stdout or "config validation failed")[-500:]
@@ -95,12 +107,13 @@ def verify_one(proxy, mihomo_bin, mixed_port, startup_timeout, request_timeout):
         )
         try:
             wait_for_listener("127.0.0.1", mixed_port, process, startup_timeout)
+            egress_ip = request_egress(mixed_port, request_timeout)
             return {
                 "name": name,
                 "type": proxy.get("type"),
                 "server": proxy.get("server"),
                 "port": proxy.get("port"),
-                "egress_ip": request_egress(mixed_port, request_timeout),
+                "egress_ip": egress_ip,
                 "verified_at": datetime.now(timezone.utc).isoformat(),
                 "status": "verified",
                 "proxy": tested_proxy,
@@ -124,15 +137,22 @@ def main():
     parser.add_argument("--port", type=int, default=17890)
     parser.add_argument("--startup-timeout", type=float, default=8)
     parser.add_argument("--request-timeout", type=float, default=10)
+    parser.add_argument("--egress-attempts", type=int, default=2)
     args = parser.parse_args()
+    if not 1024 <= args.port <= 65535:
+        parser.error("--port must be between 1024 and 65535")
+    if args.limit < 0:
+        parser.error("--limit cannot be negative")
 
     source = json.loads(Path(args.input).read_text(encoding="utf-8"))
     candidates = source.get("proxies", [])
     verified, failures = [], []
-    for index, proxy in enumerate(candidates[: max(0, args.limit)]):
+    selected = candidates[:args.limit]
+    for index, proxy in enumerate(selected):
         try:
             result = verify_one(
-                proxy, args.mihomo, args.port, args.startup_timeout, args.request_timeout
+                proxy, args.mihomo, args.port + index,
+                args.startup_timeout, args.request_timeout
             )
             verified.append(result)
             print(f"[verified] {result['name']} -> {result['egress_ip']}")
@@ -146,7 +166,7 @@ def main():
         "source": source.get("source"),
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "candidate_count": len(candidates),
-        "tested_count": min(len(candidates), max(0, args.limit)),
+        "tested_count": len(selected),
         "verified_count": len(verified),
         "status": "egress_verified" if verified else "no_verified_nodes",
         "proxies": [item["proxy"] for item in verified],

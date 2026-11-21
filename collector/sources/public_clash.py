@@ -1,4 +1,4 @@
-"""Fetch small, public Clash/Mihomo feeds without trusting their proxy health claims."""
+"""Fetch and merge public Clash/Mihomo feeds without trusting their health claims."""
 import json
 import urllib.request
 
@@ -59,15 +59,39 @@ def parse_proxies(text, limit=50):
 
 
 def fetch_candidates(limit=50, urls=PUBLIC_CLASH_URLS):
-    """Try configured feeds in order; accept only structurally valid Clash YAML."""
-    errors = []
+    """Merge healthy feeds fairly; one unavailable source must not block the others."""
+    if limit < 1:
+        return "", []
+    errors, successful_sources, source_pools = [], [], []
     for url in urls:
         try:
             text = fetch_text(url)
             proxies = parse_proxies(text, limit=limit)
             if not proxies:
                 raise ValueError("Feed contained no supported proxies")
-            return url, proxies
+            successful_sources.append(url)
+            source_pools.append(proxies)
         except Exception as exc:
             errors.append(f"{url}: {type(exc).__name__}: {exc}")
-    raise RuntimeError("All public Clash feeds failed: " + " | ".join(errors))
+
+    # Round-robin across feeds so the first large feed cannot starve later sources.
+    merged, seen = [], set()
+    max_items = max((len(pool) for pool in source_pools), default=0)
+    for index in range(max_items):
+        for pool in source_pools:
+            if index >= len(pool):
+                continue
+            proxy = pool[index]
+            key = json.dumps(proxy, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+            if key in seen:
+                continue
+            seen.add(key)
+            merged.append(proxy)
+            if len(merged) >= limit:
+                break
+        if len(merged) >= limit:
+            break
+
+    if not merged:
+        raise RuntimeError("All public Clash feeds failed: " + " | ".join(errors))
+    return ";".join(successful_sources), merged

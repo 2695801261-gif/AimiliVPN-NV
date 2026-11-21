@@ -41,6 +41,30 @@ proxies:
 """
         self.assertEqual(parse_proxies(text), [])
 
+    def test_preserves_vless_reality_vision_parameters(self):
+        text = """
+proxies:
+  - name: reality-test
+    type: vless
+    server: 192.0.2.20
+    port: 443
+    uuid: example-uuid
+    tls: true
+    flow: xtls-rprx-vision
+    servername: example.org
+    reality-opts:
+      public-key: example-public-key
+      short-id: abcd1234
+    client-fingerprint: chrome
+    network: tcp
+"""
+        proxy = parse_proxies(text)[0]
+        self.assertEqual(proxy["type"], "vless")
+        self.assertEqual(proxy["flow"], "xtls-rprx-vision")
+        self.assertEqual(proxy["reality-opts"]["public-key"], "example-public-key")
+        self.assertEqual(proxy["reality-opts"]["short-id"], "abcd1234")
+        self.assertEqual(proxy["client-fingerprint"], "chrome")
+
     def test_requires_proxies_list(self):
         with self.assertRaises(ValueError):
             parse_proxies("port: 7890\n")

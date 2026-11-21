@@ -11,7 +11,7 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -28,6 +28,20 @@ jobs:
       - name: Fetch small Mihomo-compatible public candidate set
         continue-on-error: true
         run: python collector/fetch_public_clash.py --output public-clash-candidates.json --limit 50
+      - name: Install official Mihomo binary
+        if: ${{ hashFiles('public-clash-candidates.json') != '' }}
+        run: |
+          asset_url="$(curl -fsSL https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | jq -r '.assets[] | select(.name | startswith("mihomo-linux-amd64-compatible-") and endswith(".gz")) | .browser_download_url' | head -n 1)"
+          test -n "$asset_url"
+          curl -fsSL "$asset_url" -o /tmp/mihomo.gz
+          gzip -dc /tmp/mihomo.gz > /tmp/mihomo
+          chmod +x /tmp/mihomo
+          /tmp/mihomo -v
+      - name: Verify real Mihomo proxy and public egress
+        if: ${{ hashFiles('public-clash-candidates.json') != '' }}
+        continue-on-error: true
+        run: |
+          python collector/verify_mihomo.py --mihomo /tmp/mihomo --input public-clash-candidates.json --output verified-clash-candidates.json --limit 20
       - name: Save collection snapshots for personal inspection
         if: always()
         uses: actions/upload-artifact@v4
@@ -36,6 +50,7 @@ jobs:
           path: |
             nodes.json
             public-clash-candidates.json
+            verified-clash-candidates.json
           if-no-files-found: ignore
           retention-days: 3
       - name: Publish candidate snapshot to Worker
@@ -57,3 +72,4 @@ jobs:
         run: |
           if [ -f nodes.json ]; then python -c 'import json; d=json.load(open("nodes.json")); print("VPNGate OpenVPN candidates:", d.get("count", 0))' >> "$GITHUB_STEP_SUMMARY"; fi
           if [ -f public-clash-candidates.json ]; then python -c 'import json; d=json.load(open("public-clash-candidates.json")); print("Public Mihomo candidates:", d.get("count", 0)); print("Feed:", d.get("source", "unknown"))' >> "$GITHUB_STEP_SUMMARY"; else echo 'Public Mihomo feed unavailable this run; VPNGate collection remains usable.' >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ -f verified-clash-candidates.json ]; then python -c 'import json; d=json.load(open("verified-clash-candidates.json")); print("Mihomo egress-verified nodes:", d.get("verified_count", 0)); print("Mihomo candidates tested:", d.get("tested_count", 0))' >> "$GITHUB_STEP_SUMMARY"; fi

@@ -12,7 +12,7 @@ def _int(value, default=0):
 def normalize_row(row, observed_at=None):
     host = (row.get("IP") or "").strip()
     port = _int(row.get("Port"), 0)
-    if not host or not 1 <= port <= 65535:
+    if not host:
         return None
     config_b64 = (row.get("OpenVPN_ConfigData_Base64") or "").strip()
     profile, transport = None, "unknown"
@@ -21,15 +21,21 @@ def normalize_row(row, observed_at=None):
             decoded = base64.b64decode(config_b64, validate=True).decode("utf-8", errors="replace")
             profile = decoded[:60000]
             for line in decoded.splitlines():
-                parts = line.strip().lower().split()
-                if len(parts) >= 2 and parts[0] == "proto":
-                    if parts[1] in ("tcp", "tcp-client"):
+                parts = line.strip().split()
+                if len(parts) >= 3 and parts[0].lower() == "remote":
+                    remote_host = parts[1].strip("[]")
+                    remote_port = _int(parts[2], 0)
+                    if remote_host == host and 1 <= remote_port <= 65535 and not (1 <= port <= 65535):
+                        port = remote_port
+                if len(parts) >= 2 and parts[0].lower() == "proto":
+                    if parts[1].lower() in ("tcp", "tcp-client"):
                         transport = "tcp"
-                    elif parts[1] in ("udp", "udp4", "udp6"):
+                    elif parts[1].lower() in ("udp", "udp4", "udp6"):
                         transport = "udp"
-                    break
         except Exception:
             profile = None
+    if not 1 <= port <= 65535:
+        return None
     protocol = "openvpn"
     node_id = hashlib.sha256(f"vpngate|{host}|{port}|{protocol}".encode()).hexdigest()[:24]
     return {

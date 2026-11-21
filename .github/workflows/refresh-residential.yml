@@ -1,0 +1,50 @@
+name: Refresh US residential ISP proxies
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "13 */3 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-us-residential
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Collect, cross-check and export US residential SOCKS5
+        run: python collector/export_residential.py --out-dir dist
+      - name: Publish refreshed lists
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dist/us-residential-socks5.yaml dist/us-residential-socks5.txt dist/us-residential-socks5.json
+          if git diff --cached --quiet; then
+            echo "No changes in the current live pool."
+            exit 0
+          fi
+          git commit -m "chore: refresh US residential SOCKS5 pool"
+          git push
+      - name: Write run summary
+        if: always()
+        run: |
+          if [ -f dist/us-residential-socks5.json ]; then
+            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          d=json.load(open("dist/us-residential-socks5.json", encoding="utf-8"))
+          print("US residential SOCKS5 candidates:", d["count"])
+          print("Generated:", d["generated_at"])
+          print("Criteria:", ", ".join(d["criteria"]))
+          PY
+          fi

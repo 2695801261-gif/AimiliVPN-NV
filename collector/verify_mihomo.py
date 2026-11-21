@@ -80,7 +80,7 @@ def request_egress(port, timeout, urls=EGRESS_URLS, attempts=2):
     raise RuntimeError("No public egress IP received through Mihomo: " + " | ".join(errors[-4:]))
 
 
-def verify_one(proxy, mihomo_bin, mixed_port, startup_timeout, request_timeout):
+def verify_one(proxy, mihomo_bin, mixed_port, startup_timeout, request_timeout, egress_attempts=2):
     tested_proxy = dict(proxy)
     tested_proxy["name"] = str(proxy.get("name") or "unnamed")
     name = tested_proxy["name"]
@@ -107,7 +107,7 @@ def verify_one(proxy, mihomo_bin, mixed_port, startup_timeout, request_timeout):
         )
         try:
             wait_for_listener("127.0.0.1", mixed_port, process, startup_timeout)
-            egress_ip = request_egress(mixed_port, request_timeout)
+            egress_ip = request_egress(mixed_port, request_timeout, attempts=egress_attempts)
             return {
                 "name": name,
                 "type": proxy.get("type"),
@@ -152,7 +152,7 @@ def main():
         try:
             result = verify_one(
                 proxy, args.mihomo, args.port + index,
-                args.startup_timeout, args.request_timeout
+                args.startup_timeout, args.request_timeout, args.egress_attempts
             )
             verified.append(result)
             print(f"[verified] {result['name']} -> {result['egress_ip']}")

@@ -95,4 +95,22 @@ def fetch_candidates(limit=50, urls=PUBLIC_CLASH_URLS):
 
     if not merged:
         raise RuntimeError("All public Clash feeds failed: " + " | ".join(errors))
+
+    # Spend the bounded verification budget on modern Reality candidates first.
+    # This is only a test-order preference, never a health or trust assertion.
+    def protocol_priority(proxy):
+        kind = str(proxy.get("type", "")).lower()
+        reality = isinstance(proxy.get("reality-opts"), dict)
+        flow = str(proxy.get("flow", "")).lower()
+        if kind == "vless" and reality and flow == "xtls-rprx-vision":
+            return 0
+        if kind == "vless" and reality:
+            return 1
+        if kind == "vless":
+            return 2
+        if kind in {"hysteria2", "tuic", "anytls"}:
+            return 3
+        return 4
+
+    merged.sort(key=protocol_priority)
     return ";".join(successful_sources), merged

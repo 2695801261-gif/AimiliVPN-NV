@@ -13,7 +13,7 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -52,6 +52,9 @@ jobs:
         continue-on-error: true
         run: |
           python collector/verify_mihomo.py --mihomo /tmp/mihomo --input public-clash-candidates.json --output verified-clash-candidates.json --limit 20 --egress-attempts 2
+      - name: Build verified-only Mihomo subscription
+        if: ${{ hashFiles('verified-clash-candidates.json') != '' }}
+        run: python -m collector.build_subscription --input verified-clash-candidates.json --output mihomo-subscription.yaml
       - name: Save collection snapshots for personal inspection
         if: always()
         uses: actions/upload-artifact@v4
@@ -63,14 +66,19 @@ jobs:
             verified-clash-candidates.json
           if-no-files-found: ignore
           retention-days: 3
-      - name: Publish candidate snapshot to Worker
+      - name: Publish VPNGate snapshot to Worker
         if: ${{ hashFiles('nodes.json') != '' }}
         env:
           WORKER_URL: ${{ secrets.WORKER_URL }}
           WORKER_ADMIN_TOKEN: ${{ secrets.WORKER_ADMIN_TOKEN }}
         run: |
           if [ -z "$WORKER_URL" ] || [ -z "$WORKER_ADMIN_TOKEN" ]; then
-            echo "::notice::Worker secrets are not configured; collection succeeded but publish was skipped."
+            echo "::notice::Worker secrets are not configured; VPNGate publish was skipped."
+            exit 0
+          fi
+          node_count="$(python -c 'import json; print(int(json.load(open("nodes.json")).get("count", 0)))')"
+          if [ "$node_count" -le 0 ]; then
+            echo "::notice::VPNGate returned zero nodes; preserving the existing Worker snapshot."
             exit 0
           fi
           curl --fail-with-body --silent --show-error \
@@ -78,9 +86,41 @@ jobs:
             -H "Authorization: Bearer $WORKER_ADMIN_TOKEN" \
             -H "Content-Type: application/json" \
             --data-binary @nodes.json
+      - name: Publish verified Mihomo subscription to Worker
+        if: ${{ hashFiles('mihomo-subscription.yaml') != '' && hashFiles('verified-clash-candidates.json') != '' }}
+        env:
+          WORKER_URL: ${{ secrets.WORKER_URL }}
+          WORKER_ADMIN_TOKEN: ${{ secrets.WORKER_ADMIN_TOKEN }}
+        run: |
+          verified_count="$(python -c 'import json; print(int(json.load(open("verified-clash-candidates.json")).get("verified_count", 0)))' 2>/dev/null || echo 0)"
+          if [ "$verified_count" -le 0 ]; then
+            echo "::notice::No egress-verified Mihomo nodes; preserving the previous subscription."
+            exit 0
+          fi
+          if [ -z "$WORKER_URL" ] || [ -z "$WORKER_ADMIN_TOKEN" ]; then
+            echo "::notice::Worker secrets are not configured; Mihomo subscription was built but not published."
+            exit 0
+          fi
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          snapshot = json.loads(Path("verified-clash-candidates.json").read_text(encoding="utf-8"))
+          body = {
+              "verified_count": snapshot["verified_count"],
+              "generated_at": snapshot.get("generated_at"),
+              "subscription_yaml": Path("mihomo-subscription.yaml").read_text(encoding="utf-8"),
+          }
+          Path("/tmp/mihomo-import.json").write_text(json.dumps(body), encoding="utf-8")
+          PY
+          curl --fail-with-body --silent --show-error \
+            -X POST "$WORKER_URL/api/mihomo/import" \
+            -H "Authorization: Bearer $WORKER_ADMIN_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data-binary @/tmp/mihomo-import.json
       - name: Write summary
         if: always()
         run: |
           if [ -f nodes.json ]; then python -c 'import json; d=json.load(open("nodes.json")); print("VPNGate OpenVPN candidates:", d.get("count", 0))' >> "$GITHUB_STEP_SUMMARY"; fi
-          if [ -f public-clash-candidates.json ]; then python -c 'import json; d=json.load(open("public-clash-candidates.json")); print("Public Mihomo candidates:", d.get("count", 0)); print("Feed:", d.get("source", "unknown"))' >> "$GITHUB_STEP_SUMMARY"; else echo 'Public Mihomo feed unavailable this run; VPNGate collection remains usable.' >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ -f public-clash-candidates.json ]; then python -c 'import json; d=json.load(open("public-clash-candidates.json")); print("Public Mihomo candidates:", d.get("count", 0)); print("Feed:", d.get("source", "unknown"))' >> "$GITHUB_STEP_SUMMARY"; else echo 'Public Mihomo feed unavailable this run.' >> "$GITHUB_STEP_SUMMARY"; fi
           if [ -f verified-clash-candidates.json ]; then python -c 'import json; d=json.load(open("verified-clash-candidates.json")); print("Mihomo egress-verified nodes:", d.get("verified_count", 0)); print("Mihomo candidates tested:", d.get("tested_count", 0))' >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ -f mihomo-subscription.yaml ]; then echo "Verified-only Mihomo YAML subscription: generated" >> "$GITHUB_STEP_SUMMARY"; fi

@@ -37,7 +37,7 @@ class MihomoVerifierTests(unittest.TestCase):
         run.assert_called_once()
         self.assertIn("-t", run.call_args.args[0])
         wait_listener.assert_called_once()
-        egress.assert_called_once_with(17890, 1)
+        egress.assert_called_once_with(17890, 1, attempts=2)
 
     @patch("collector.verify_mihomo.time.sleep")
     @patch("collector.verify_mihomo.urllib.request.build_opener")

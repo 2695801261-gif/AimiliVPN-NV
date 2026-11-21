@@ -1,0 +1,128 @@
+{
+  "generated_at": "2026-11-21T05:38:30Z",
+  "count": 11,
+  "criteria": [
+    "United States",
+    "hosting=false",
+    "mobile=false",
+    "in socks5_alive.txt",
+    "in socks5_residential.txt"
+  ],
+  "source": {
+    "detail": "https://raw.githubusercontent.com/fmw86/free-proxy-pool/main/socks5_residential_detail.csv",
+    "alive": "https://raw.githubusercontent.com/fmw86/free-proxy-pool/main/socks5_alive.txt",
+    "residential": "https://raw.githubusercontent.com/fmw86/free-proxy-pool/main/socks5_residential.txt"
+  },
+  "nodes": [
+    {
+      "name": "US - Cox Communications Inc. - Pensacola",
+      "server": "174.64.199.82",
+      "port": 4145,
+      "isp": "Cox Communications Inc.",
+      "asn": "AS22773 Cox Communications Inc.",
+      "city": "Pensacola",
+      "region": "Florida",
+      "country": "United States"
+    },
+    {
+      "name": "US - Cox Communications Inc. - Pensacola",
+      "server": "174.77.111.196",
+      "port": 4145,
+      "isp": "Cox Communications Inc.",
+      "asn": "AS22773 Cox Communications Inc.",
+      "city": "Pensacola",
+      "region": "Florida",
+      "country": "United States"
+    },
+    {
+      "name": "US - Free Range Internet LLC - Ajo",
+      "server": "23.191.176.193",
+      "port": 1080,
+      "isp": "Free Range Internet LLC",
+      "asn": "AS400142 Free Range Internet LLC",
+      "city": "Ajo",
+      "region": "Arizona",
+      "country": "United States"
+    },
+    {
+      "name": "US - Gainesville Regional Utilities - Gainesville",
+      "server": "66.231.128.103",
+      "port": 1080,
+      "isp": "Gainesville Regional Utilities",
+      "asn": "AS10674 Gainesville Regional Utilities",
+      "city": "Gainesville",
+      "region": "Florida",
+      "country": "United States"
+    },
+    {
+      "name": "US - JAB Wireless, INC. - Princeton",
+      "server": "67.210.146.50",
+      "port": 11080,
+      "isp": "JAB Wireless, INC.",
+      "asn": "AS17306 JAB Wireless, INC.",
+      "city": "Princeton",
+      "region": "Texas",
+      "country": "United States"
+    },
+    {
+      "name": "US - Level 3 Communications, Inc. - Chicago",
+      "server": "8.40.19.147",
+      "port": 1080,
+      "isp": "Level 3 Communications, Inc.",
+      "asn": "AS3356 Level 3 Parent, LLC",
+      "city": "Chicago",
+      "region": "Illinois",
+      "country": "United States"
+    },
+    {
+      "name": "US - Optimum - Kingman",
+      "server": "24.121.73.10",
+      "port": 1080,
+      "isp": "Optimum",
+      "asn": "AS19108 Optimum",
+      "city": "Kingman",
+      "region": "Arizona",
+      "country": "United States"
+    },
+    {
+      "name": "US - Optimum - Lake Havasu City",
+      "server": "24.121.176.155",
+      "port": 1080,
+      "isp": "Optimum",
+      "asn": "AS19108 Optimum",
+      "city": "Lake Havasu City",
+      "region": "Arizona",
+      "country": "United States"
+    },
+    {
+      "name": "US - Spectrum - Bakersfield",
+      "server": "71.44.207.66",
+      "port": 1080,
+      "isp": "Spectrum",
+      "asn": "AS33363 Charter Communications, Inc",
+      "city": "Bakersfield",
+      "region": "California",
+      "country": "United States"
+    },
+    {
+      "name": "US - Summit Broadband - Naples",
+      "server": "74.112.62.118",
+      "port": 1080,
+      "isp": "Summit Broadband",
+      "asn": "AS23314 Summit Broadband",
+      "city": "Naples",
+      "region": "Florida",
+      "country": "United States"
+    },
+    {
+      "name": "US - Uniti Fiber Holdings Inc. - Mobile",
+      "server": "142.190.83.132",
+      "port": 1080,
+      "isp": "Uniti Fiber Holdings Inc.",
+      "asn": "AS13760 Uniti Fiber Holdings Inc.",
+      "city": "Mobile",
+      "region": "Alabama",
+      "country": "United States"
+    }
+  ]
+}

@@ -14,6 +14,10 @@ def build_subscription(snapshot):
         raise ValueError("verified snapshot must contain proxies and verification arrays")
     if not proxies or len(proxies) != len(verification):
         raise ValueError("refusing to publish an empty or inconsistent verified snapshot")
+    if snapshot.get("verified_count") != len(proxies) or any(
+        not isinstance(item, dict) or item.get("status") != "verified" for item in verification
+    ):
+        raise ValueError("snapshot contains entries without successful egress verification")
 
     output, names = [], set()
     for index, source in enumerate(proxies, 1):

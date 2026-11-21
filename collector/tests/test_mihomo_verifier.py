@@ -19,7 +19,7 @@ class MihomoVerifierTests(unittest.TestCase):
         self.assertIsNone(parse_public_ip("127.0.0.1"))
         self.assertIsNone(parse_public_ip("not-an-ip"))
 
-    @patch("collector.verify_mihomo.request_egress", return_value="203.0.113.8")
+    @patch("collector.verify_mihomo.request_egress", return_value="8.8.8.8")
     @patch("collector.verify_mihomo.wait_for_listener")
     @patch("collector.verify_mihomo.subprocess.Popen")
     @patch("collector.verify_mihomo.subprocess.run")
@@ -33,11 +33,24 @@ class MihomoVerifierTests(unittest.TestCase):
         proxy = {"name": "node-a", "type": "ss", "server": "example.org", "port": 443}
         result = verify_one(proxy, "mihomo", 17890, 1, 1)
         self.assertEqual(result["status"], "verified")
-        self.assertEqual(result["egress_ip"], "203.0.113.8")
+        self.assertEqual(result["egress_ip"], "8.8.8.8")
         run.assert_called_once()
         self.assertIn("-t", run.call_args.args[0])
         wait_listener.assert_called_once()
         egress.assert_called_once_with(17890, 1)
+
+    @patch("collector.verify_mihomo.time.sleep")
+    @patch("collector.verify_mihomo.urllib.request.build_opener")
+    def test_egress_uses_fallback_endpoint_after_transient_failure(self, build_opener, sleep):
+        from collector.verify_mihomo import request_egress
+
+        response = unittest.mock.MagicMock()
+        response.__enter__.return_value.read.return_value = b"1.1.1.1"
+        opener = unittest.mock.Mock()
+        opener.open.side_effect = [TimeoutError("first endpoint timed out"), response]
+        build_opener.return_value = opener
+        self.assertEqual(request_egress(17890, 1, urls=("https://first.invalid", "https://second.invalid"), attempts=1), "1.1.1.1")
+        self.assertEqual(opener.open.call_count, 2)
 
 
 if __name__ == "__main__":

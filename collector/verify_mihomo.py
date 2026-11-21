@@ -69,11 +69,13 @@ def request_egress(port, timeout):
 
 
 def verify_one(proxy, mihomo_bin, mixed_port, startup_timeout, request_timeout):
-    name = str(proxy.get("name") or "unnamed")
+    tested_proxy = dict(proxy)
+    tested_proxy["name"] = str(proxy.get("name") or "unnamed")
+    name = tested_proxy["name"]
     with tempfile.TemporaryDirectory(prefix="aimili-mihomo-") as workdir:
         config_path = Path(workdir) / "config.yaml"
         config_path.write_text(
-            yaml.safe_dump(build_config(proxy, mixed_port), allow_unicode=True, sort_keys=False),
+            yaml.safe_dump(build_config(tested_proxy, mixed_port), allow_unicode=True, sort_keys=False),
             encoding="utf-8",
         )
         check = subprocess.run(
@@ -101,7 +103,7 @@ def verify_one(proxy, mihomo_bin, mixed_port, startup_timeout, request_timeout):
                 "egress_ip": request_egress(mixed_port, request_timeout),
                 "verified_at": datetime.now(timezone.utc).isoformat(),
                 "status": "verified",
-                "proxy": proxy,
+                "proxy": tested_proxy,
             }
         finally:
             if process.poll() is None:

@@ -55,15 +55,43 @@ jobs:
       - name: Build verified-only Mihomo subscription
         if: ${{ hashFiles('verified-clash-candidates.json') != '' }}
         run: python -m collector.build_subscription --input verified-clash-candidates.json --output mihomo-subscription.yaml
-      - name: Save collection snapshots for personal inspection
+      - name: Redact snapshots before public artifact upload
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          def load(path):
+              try:
+                  return json.loads(Path(path).read_text(encoding="utf-8"))
+              except (OSError, ValueError):
+                  return None
+          def save(path, data):
+              Path(path).write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+          d = load("nodes.json")
+          if d is not None:
+              safe_nodes = []
+              for n in d.get("nodes", []):
+                  safe_nodes.append({k:n.get(k) for k in ("id","country","country_code","protocol","transport","endpoint","status","observed_at","last_checked_at","latency_ms","egress_ip","metadata") if k in n})
+              save("nodes-summary.json", {"source":d.get("source"),"generated_at":d.get("generated_at"),"count":len(safe_nodes),"nodes":safe_nodes})
+          d = load("public-clash-candidates.json")
+          if d is not None:
+              safe = [{"name":p.get("name"),"type":p.get("type"),"server":p.get("server"),"port":p.get("port")} for p in d.get("proxies", [])]
+              save("public-clash-summary.json", {"source":d.get("source"),"generated_at":d.get("generated_at"),"count":len(safe),"candidates":safe})
+          d = load("verified-clash-candidates.json")
+          if d is not None:
+              safe = [{"name":p.get("name"),"type":p.get("type"),"server":p.get("server"),"port":p.get("port")} for p in d.get("proxies", [])]
+              save("verified-clash-summary.json", {"source":d.get("source"),"generated_at":d.get("generated_at"),"candidate_count":d.get("candidate_count"),"tested_count":d.get("tested_count"),"verified_count":d.get("verified_count"),"status":d.get("status"),"proxies":safe,"verification":d.get("verification", [])})
+          PY
+      - name: Save redacted collection summaries
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: personal-node-snapshot
+          name: personal-node-summary
           path: |
-            nodes.json
-            public-clash-candidates.json
-            verified-clash-candidates.json
+            nodes-summary.json
+            public-clash-summary.json
+            verified-clash-summary.json
           if-no-files-found: ignore
           retention-days: 3
       - name: Publish VPNGate snapshot to Worker

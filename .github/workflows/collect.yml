@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   collect:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - name: Check out repository
@@ -26,6 +26,7 @@ jobs:
       - name: Run collector unit tests
         run: python -m unittest discover -s collector/tests -v
       - name: Collect VPNGate snapshot
+        continue-on-error: true
         run: python collector/main.py --source vpngate --output nodes.json
       - name: Fetch small Mihomo-compatible public candidate set
         continue-on-error: true
@@ -33,9 +34,16 @@ jobs:
       - name: Install official Mihomo binary
         if: ${{ hashFiles('public-clash-candidates.json') != '' }}
         run: |
-          asset_url="$(curl -fsSL https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | jq -r '.assets[] | select(.name | startswith("mihomo-linux-amd64-compatible-") and endswith(".gz")) | .browser_download_url' | head -n 1)"
-          test -n "$asset_url"
+          release_json="$(curl -fsSL https://api.github.com/repos/MetaCubeX/mihomo/releases/latest)"
+          asset="$(printf '%s' "$release_json" | jq -er '.assets[] | select(.name | startswith("mihomo-linux-amd64-compatible-") and endswith(".gz")) | [.browser_download_url, (.digest // "")] | @tsv' | head -n 1)"
+          test -n "$asset"
+          asset_url="$(printf '%s' "$asset" | cut -f1)"
+          expected_digest="$(printf '%s' "$asset" | cut -f2)"
           curl -fsSL "$asset_url" -o /tmp/mihomo.gz
+          if [ -n "$expected_digest" ]; then
+            printf '%s  %s\n' "${expected_digest#sha256:}" /tmp/mihomo.gz | sha256sum -c -
+          fi
+          gzip -t /tmp/mihomo.gz
           gzip -dc /tmp/mihomo.gz > /tmp/mihomo
           chmod +x /tmp/mihomo
           /tmp/mihomo -v
@@ -43,7 +51,7 @@ jobs:
         if: ${{ hashFiles('public-clash-candidates.json') != '' }}
         continue-on-error: true
         run: |
-          python collector/verify_mihomo.py --mihomo /tmp/mihomo --input public-clash-candidates.json --output verified-clash-candidates.json --limit 20
+          python collector/verify_mihomo.py --mihomo /tmp/mihomo --input public-clash-candidates.json --output verified-clash-candidates.json --limit 20 --egress-attempts 2
       - name: Save collection snapshots for personal inspection
         if: always()
         uses: actions/upload-artifact@v4
@@ -56,6 +64,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 3
       - name: Publish candidate snapshot to Worker
+        if: ${{ hashFiles('nodes.json') != '' }}
         env:
           WORKER_URL: ${{ secrets.WORKER_URL }}
           WORKER_ADMIN_TOKEN: ${{ secrets.WORKER_ADMIN_TOKEN }}

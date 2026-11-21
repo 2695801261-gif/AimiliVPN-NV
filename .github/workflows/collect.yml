@@ -27,10 +27,10 @@ jobs:
         run: python -m unittest discover -s collector/tests -v
       - name: Collect VPNGate snapshot
         continue-on-error: true
-        run: python collector/main.py --source vpngate --output nodes.json
+        run: python -m collector.main --source vpngate --output nodes.json
       - name: Fetch small Mihomo-compatible public candidate set
         continue-on-error: true
-        run: python collector/fetch_public_clash.py --output public-clash-candidates.json --limit 50
+        run: python -m collector.fetch_public_clash --output public-clash-candidates.json --limit 50
       - name: Install official Mihomo binary
         if: ${{ hashFiles('public-clash-candidates.json') != '' }}
         run: |

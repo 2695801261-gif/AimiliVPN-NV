@@ -36,6 +36,20 @@ class SubscriptionBuilderTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             build_subscription(snapshot)
 
+    def test_refuses_non_object_proxy_instead_of_silently_dropping_it(self):
+        snapshot = self.snapshot()
+        snapshot["proxies"][1] = None
+        with self.assertRaisesRegex(ValueError, "not an object"):
+            build_subscription(snapshot)
+
+    def test_refuses_invalid_endpoint_fields(self):
+        for field, value in (("server", ""), ("port", 70000), ("port", True), ("type", "")):
+            with self.subTest(field=field, value=value):
+                snapshot = self.snapshot()
+                snapshot["proxies"][0][field] = value
+                with self.assertRaises(ValueError):
+                    build_subscription(snapshot)
+
 
 if __name__ == "__main__":
     unittest.main()

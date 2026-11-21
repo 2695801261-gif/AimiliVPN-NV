@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-21T05:38:30Z",
-  "count": 11,
+  "generated_at": "2026-11-21T14:34:13Z",
+  "count": 9,
   "criteria": [
     "United States",
     "hosting=false",
@@ -15,33 +15,23 @@
   },
   "nodes": [
     {
-      "name": "US - Cox Communications Inc. - Pensacola",
-      "server": "174.64.199.82",
-      "port": 4145,
-      "isp": "Cox Communications Inc.",
-      "asn": "AS22773 Cox Communications Inc.",
-      "city": "Pensacola",
-      "region": "Florida",
-      "country": "United States"
-    },
-    {
-      "name": "US - Cox Communications Inc. - Pensacola",
-      "server": "174.77.111.196",
-      "port": 4145,
-      "isp": "Cox Communications Inc.",
-      "asn": "AS22773 Cox Communications Inc.",
-      "city": "Pensacola",
-      "region": "Florida",
-      "country": "United States"
-    },
-    {
-      "name": "US - Free Range Internet LLC - Ajo",
-      "server": "23.191.176.193",
+      "name": "US - BrightRidge - Johnson City",
+      "server": "152.86.78.16",
       "port": 1080,
-      "isp": "Free Range Internet LLC",
-      "asn": "AS400142 Free Range Internet LLC",
-      "city": "Ajo",
-      "region": "Arizona",
+      "isp": "BrightRidge",
+      "asn": "AS22987 BrightRidge",
+      "city": "Johnson City",
+      "region": "Tennessee",
+      "country": "United States"
+    },
+    {
+      "name": "US - Cox Communications Inc. - Irvine",
+      "server": "72.195.114.184",
+      "port": 4145,
+      "isp": "Cox Communications Inc.",
+      "asn": "AS22773 Cox Communications Inc.",
+      "city": "Irvine",
+      "region": "California",
       "country": "United States"
     },
     {
@@ -55,13 +45,33 @@
       "country": "United States"
     },
     {
-      "name": "US - JAB Wireless, INC. - Princeton",
-      "server": "67.210.146.50",
-      "port": 11080,
-      "isp": "JAB Wireless, INC.",
-      "asn": "AS17306 JAB Wireless, INC.",
-      "city": "Princeton",
-      "region": "Texas",
+      "name": "US - ITGLOBAL.COM NL B.V. - Newark",
+      "server": "31.44.5.192",
+      "port": 1081,
+      "isp": "ITGLOBAL.COM NL B.V.",
+      "asn": "AS208951 ITGLOBAL.COM",
+      "city": "Newark",
+      "region": "New Jersey",
+      "country": "United States"
+    },
+    {
+      "name": "US - KAMO Electric Cooperative - Anderson",
+      "server": "206.246.26.1",
+      "port": 1080,
+      "isp": "KAMO Electric Cooperative",
+      "asn": "AS27258 KAMO Electric Cooperative, Inc.",
+      "city": "Anderson",
+      "region": "Missouri",
+      "country": "United States"
+    },
+    {
+      "name": "US - KAMO Electric Cooperative - Anderson",
+      "server": "206.246.26.65",
+      "port": 1080,
+      "isp": "KAMO Electric Cooperative",
+      "asn": "AS27258 KAMO Electric Cooperative, Inc.",
+      "city": "Anderson",
+      "region": "Missouri",
       "country": "United States"
     },
     {
@@ -75,53 +85,23 @@
       "country": "United States"
     },
     {
-      "name": "US - Optimum - Kingman",
-      "server": "24.121.73.10",
+      "name": "US - TDS TELECOM - Bend",
+      "server": "67.204.153.223",
       "port": 1080,
-      "isp": "Optimum",
-      "asn": "AS19108 Optimum",
-      "city": "Kingman",
-      "region": "Arizona",
+      "isp": "TDS TELECOM",
+      "asn": "AS4181 TDS TELECOM",
+      "city": "Bend",
+      "region": "Oregon",
       "country": "United States"
     },
     {
-      "name": "US - Optimum - Lake Havasu City",
-      "server": "24.121.176.155",
-      "port": 1080,
-      "isp": "Optimum",
-      "asn": "AS19108 Optimum",
-      "city": "Lake Havasu City",
-      "region": "Arizona",
-      "country": "United States"
-    },
-    {
-      "name": "US - Spectrum - Bakersfield",
-      "server": "71.44.207.66",
-      "port": 1080,
-      "isp": "Spectrum",
-      "asn": "AS33363 Charter Communications, Inc",
-      "city": "Bakersfield",
-      "region": "California",
-      "country": "United States"
-    },
-    {
-      "name": "US - Summit Broadband - Naples",
-      "server": "74.112.62.118",
-      "port": 1080,
-      "isp": "Summit Broadband",
-      "asn": "AS23314 Summit Broadband",
-      "city": "Naples",
-      "region": "Florida",
-      "country": "United States"
-    },
-    {
-      "name": "US - Uniti Fiber Holdings Inc. - Mobile",
-      "server": "142.190.83.132",
+      "name": "US - Uniti Fiber Holdings Inc. - Gulfport",
+      "server": "142.190.95.154",
       "port": 1080,
       "isp": "Uniti Fiber Holdings Inc.",
       "asn": "AS13760 Uniti Fiber Holdings Inc.",
-      "city": "Mobile",
-      "region": "Alabama",
+      "city": "Gulfport",
+      "region": "Mississippi",
       "country": "United States"
     }
   ]

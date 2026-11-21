@@ -10,6 +10,12 @@ class NormalizeTests(unittest.TestCase):
         self.assertEqual(node["protocol"], "openvpn")
         self.assertEqual(node["transport"], "tcp")
 
+    def test_vpngate_api_extracts_port_from_embedded_profile(self):
+        cfg = base64.b64encode(b"client\\nproto udp\\nremote 198.51.100.22 1194\\n").decode()
+        node = normalize_row({"IP":"198.51.100.22","OpenVPN_ConfigData_Base64":cfg})
+        self.assertEqual(node["endpoint"]["port"], 1194)
+        self.assertEqual(node["transport"], "udp")
+
     def test_bad_port_skipped(self):
         self.assertIsNone(normalize_row({"IP":"203.0.113.8","Port":"0"}))
 

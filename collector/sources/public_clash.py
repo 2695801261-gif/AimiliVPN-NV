@@ -5,6 +5,7 @@ import urllib.request
 PUBLIC_CLASH_URLS = (
     "https://nodesfree.github.io/clashnode/clash.yaml",
     "https://735754647.github.io/Free-Nodes/clash.yaml",
+    "https://github.com/learnLi/free-nodes/releases/latest/download/list.meta.cn.yml",
 )
 PUBLIC_CLASH_URL = PUBLIC_CLASH_URLS[0]
 SUPPORTED_TYPES = {"ss", "vmess", "vless", "trojan", "hysteria", "hysteria2", "tuic", "anytls"}

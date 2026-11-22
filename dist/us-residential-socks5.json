@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-22T11:10:18Z",
-  "count": 5,
+  "generated_at": "2026-11-22T19:29:47Z",
+  "count": 8,
   "criteria": [
     "United States",
     "hosting=false",
@@ -15,38 +15,68 @@
   },
   "nodes": [
     {
-      "name": "US - Arbuckle Communications, LLC - Lone Grove",
-      "server": "68.233.8.123",
+      "name": "US - BrightRidge - Johnson City",
+      "server": "152.86.78.16",
       "port": 1080,
-      "isp": "Arbuckle Communications, LLC",
-      "asn": "AS54075 Arbuckle Communications, LLC",
-      "city": "Lone Grove",
-      "region": "Oklahoma",
+      "isp": "BrightRidge",
+      "asn": "AS22987 BrightRidge",
+      "city": "Johnson City",
+      "region": "Tennessee",
       "country": "United States"
     },
     {
-      "name": "US - Cox Communications Inc. - Phoenix",
-      "server": "72.223.61.88",
+      "name": "US - Charter Communications - Strongsville",
+      "server": "74.131.237.22",
+      "port": 1080,
+      "isp": "Charter Communications",
+      "asn": "AS10796 Charter Communications Inc",
+      "city": "Strongsville",
+      "region": "Ohio",
+      "country": "United States"
+    },
+    {
+      "name": "US - Cox Communications Inc. - Scottsdale",
+      "server": "70.176.94.21",
       "port": 1080,
       "isp": "Cox Communications Inc.",
       "asn": "AS22773 Cox Communications Inc.",
-      "city": "Phoenix",
+      "city": "Scottsdale",
       "region": "Arizona",
       "country": "United States"
     },
     {
-      "name": "US - Fourplex Telecom LLC - New York",
-      "server": "23.134.76.173",
+      "name": "US - Gainesville Regional Utilities - Gainesville",
+      "server": "66.231.128.103",
       "port": 1080,
-      "isp": "Fourplex Telecom LLC",
-      "asn": "AS27284 Fourplex Telecom LLC",
-      "city": "New York",
-      "region": "New York",
+      "isp": "Gainesville Regional Utilities",
+      "asn": "AS10674 Gainesville Regional Utilities",
+      "city": "Gainesville",
+      "region": "Florida",
+      "country": "United States"
+    },
+    {
+      "name": "US - Indigital Telecom - Goshen",
+      "server": "66.170.46.17",
+      "port": 1080,
+      "isp": "Indigital Telecom",
+      "asn": "AS16698 NP Tech",
+      "city": "Goshen",
+      "region": "Indiana",
+      "country": "United States"
+    },
+    {
+      "name": "US - JAB Wireless, INC. - Princeton",
+      "server": "67.210.146.50",
+      "port": 11080,
+      "isp": "JAB Wireless, INC.",
+      "asn": "AS17306 JAB Wireless, INC.",
+      "city": "Princeton",
+      "region": "Texas",
       "country": "United States"
     },
     {
       "name": "US - Level 3 Communications, Inc. - Chicago",
-      "server": "8.40.19.133",
+      "server": "8.40.19.147",
       "port": 1080,
       "isp": "Level 3 Communications, Inc.",
       "asn": "AS3356 Level 3 Parent, LLC",
@@ -55,13 +85,13 @@
       "country": "United States"
     },
     {
-      "name": "US - Uniti Fiber Holdings Inc. - Gulfport",
-      "server": "142.190.95.154",
+      "name": "US - TDS TELECOM - Bend",
+      "server": "67.204.153.223",
       "port": 1080,
-      "isp": "Uniti Fiber Holdings Inc.",
-      "asn": "AS13760 Uniti Fiber Holdings Inc.",
-      "city": "Gulfport",
-      "region": "Mississippi",
+      "isp": "TDS TELECOM",
+      "asn": "AS4181 TDS TELECOM",
+      "city": "Bend",
+      "region": "Oregon",
       "country": "United States"
     }
   ]

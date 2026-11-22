@@ -1,28 +1,43 @@
 # Auto-generated. Public unauthenticated SOCKS5 proxies; do not use for sensitive accounts.
-# Generated at: 2026-11-22T11:10:18Z
+# Generated at: 2026-11-22T19:29:47Z
 proxies:
-  - name: "US-ISP-001 Arbuckle Communications, LLC Lone Grove"
+  - name: "US-ISP-001 BrightRidge Johnson City"
     type: socks5
-    server: 68.233.8.123
+    server: 152.86.78.16
     port: 1080
     udp: true
-  - name: "US-ISP-002 Cox Communications Inc. Phoenix"
+  - name: "US-ISP-002 Charter Communications Strongsville"
     type: socks5
-    server: 72.223.61.88
+    server: 74.131.237.22
     port: 1080
     udp: true
-  - name: "US-ISP-003 Fourplex Telecom LLC New York"
+  - name: "US-ISP-003 Cox Communications Inc. Scottsdale"
     type: socks5
-    server: 23.134.76.173
+    server: 70.176.94.21
     port: 1080
     udp: true
-  - name: "US-ISP-004 Level 3 Communications, Inc. Chicago"
+  - name: "US-ISP-004 Gainesville Regional Utilities Gainesville"
     type: socks5
-    server: 8.40.19.133
+    server: 66.231.128.103
     port: 1080
     udp: true
-  - name: "US-ISP-005 Uniti Fiber Holdings Inc. Gulfport"
+  - name: "US-ISP-005 Indigital Telecom Goshen"
     type: socks5
-    server: 142.190.95.154
+    server: 66.170.46.17
+    port: 1080
+    udp: true
+  - name: "US-ISP-006 JAB Wireless, INC. Princeton"
+    type: socks5
+    server: 67.210.146.50
+    port: 11080
+    udp: true
+  - name: "US-ISP-007 Level 3 Communications, Inc. Chicago"
+    type: socks5
+    server: 8.40.19.147
+    port: 1080
+    udp: true
+  - name: "US-ISP-008 TDS TELECOM Bend"
+    type: socks5
+    server: 67.204.153.223
     port: 1080
     udp: true

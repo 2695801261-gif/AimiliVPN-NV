@@ -1,12 +1,8 @@
 # Auto-generated SOCKS5 URIs for NekoBox / compatible clients.
-# Generated at: 2026-11-22T01:12:15Z
+# Generated at: 2026-11-22T11:10:18Z
 # Public unauthenticated proxies; availability and ISP classification can change.
 socks5://68.233.8.123:1080#US-ISP-001%20Arbuckle%20Communications%2C%20LLC%20Lone%20Grove
-socks5://216.51.177.106:1080#US-ISP-002%20Aureon%20Network%20Services%20Boone
-socks5://64.72.211.57:1080#US-ISP-003%20Central%20Utah%20Telephone%2C%20Inc.%20American%20Fork
-socks5://72.223.61.88:1080#US-ISP-004%20Cox%20Communications%20Inc.%20Phoenix
-socks5://66.170.46.17:1080#US-ISP-005%20Indigital%20Telecom%20Goshen
-socks5://67.210.146.50:11080#US-ISP-006%20JAB%20Wireless%2C%20INC.%20Princeton
-socks5://8.40.19.147:1080#US-ISP-007%20Level%203%20Communications%2C%20Inc.%20Chicago
-socks5://154.29.145.165:1080#US-ISP-008%20NetLab%20Global%20Los%20Angeles
-socks5://71.78.199.161:1080#US-ISP-009%20Spectrum%20Austin
+socks5://72.223.61.88:1080#US-ISP-002%20Cox%20Communications%20Inc.%20Phoenix
+socks5://23.134.76.173:1080#US-ISP-003%20Fourplex%20Telecom%20LLC%20New%20York
+socks5://8.40.19.133:1080#US-ISP-004%20Level%203%20Communications%2C%20Inc.%20Chicago
+socks5://142.190.95.154:1080#US-ISP-005%20Uniti%20Fiber%20Holdings%20Inc.%20Gulfport

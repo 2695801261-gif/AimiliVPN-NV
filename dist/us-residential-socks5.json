@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-22T01:12:15Z",
-  "count": 9,
+  "generated_at": "2026-11-22T11:10:18Z",
+  "count": 5,
   "criteria": [
     "United States",
     "hosting=false",
@@ -25,26 +25,6 @@
       "country": "United States"
     },
     {
-      "name": "US - Aureon Network Services - Boone",
-      "server": "216.51.177.106",
-      "port": 1080,
-      "isp": "Aureon Network Services",
-      "asn": "AS5056 Aureon Network Services",
-      "city": "Boone",
-      "region": "Iowa",
-      "country": "United States"
-    },
-    {
-      "name": "US - Central Utah Telephone, Inc. - American Fork",
-      "server": "64.72.211.57",
-      "port": 1080,
-      "isp": "Central Utah Telephone, Inc.",
-      "asn": "AS36103 Central Utah Telephone, Inc.",
-      "city": "American Fork",
-      "region": "Utah",
-      "country": "United States"
-    },
-    {
       "name": "US - Cox Communications Inc. - Phoenix",
       "server": "72.223.61.88",
       "port": 1080,
@@ -55,28 +35,18 @@
       "country": "United States"
     },
     {
-      "name": "US - Indigital Telecom - Goshen",
-      "server": "66.170.46.17",
+      "name": "US - Fourplex Telecom LLC - New York",
+      "server": "23.134.76.173",
       "port": 1080,
-      "isp": "Indigital Telecom",
-      "asn": "AS16698 NP Tech",
-      "city": "Goshen",
-      "region": "Indiana",
-      "country": "United States"
-    },
-    {
-      "name": "US - JAB Wireless, INC. - Princeton",
-      "server": "67.210.146.50",
-      "port": 11080,
-      "isp": "JAB Wireless, INC.",
-      "asn": "AS17306 JAB Wireless, INC.",
-      "city": "Princeton",
-      "region": "Texas",
+      "isp": "Fourplex Telecom LLC",
+      "asn": "AS27284 Fourplex Telecom LLC",
+      "city": "New York",
+      "region": "New York",
       "country": "United States"
     },
     {
       "name": "US - Level 3 Communications, Inc. - Chicago",
-      "server": "8.40.19.147",
+      "server": "8.40.19.133",
       "port": 1080,
       "isp": "Level 3 Communications, Inc.",
       "asn": "AS3356 Level 3 Parent, LLC",
@@ -85,23 +55,13 @@
       "country": "United States"
     },
     {
-      "name": "US - NetLab Global - Los Angeles",
-      "server": "154.29.145.165",
+      "name": "US - Uniti Fiber Holdings Inc. - Gulfport",
+      "server": "142.190.95.154",
       "port": 1080,
-      "isp": "NetLab Global",
-      "asn": "AS979 NetLab Global",
-      "city": "Los Angeles",
-      "region": "California",
-      "country": "United States"
-    },
-    {
-      "name": "US - Spectrum - Austin",
-      "server": "71.78.199.161",
-      "port": 1080,
-      "isp": "Spectrum",
-      "asn": "AS11427 Charter Communications Inc",
-      "city": "Austin",
-      "region": "Texas",
+      "isp": "Uniti Fiber Holdings Inc.",
+      "asn": "AS13760 Uniti Fiber Holdings Inc.",
+      "city": "Gulfport",
+      "region": "Mississippi",
       "country": "United States"
     }
   ]

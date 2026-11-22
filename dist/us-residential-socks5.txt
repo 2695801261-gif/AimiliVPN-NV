@@ -1,5 +1,5 @@
 # Auto-generated SOCKS5 URIs for NekoBox / compatible clients.
-# Generated at: 2026-11-21T20:53:31Z
+# Generated at: 2026-11-22T01:12:15Z
 # Public unauthenticated proxies; availability and ISP classification can change.
 socks5://68.233.8.123:1080#US-ISP-001%20Arbuckle%20Communications%2C%20LLC%20Lone%20Grove
 socks5://216.51.177.106:1080#US-ISP-002%20Aureon%20Network%20Services%20Boone

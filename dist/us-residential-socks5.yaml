@@ -1,38 +1,88 @@
 # Auto-generated. Public unauthenticated SOCKS5 proxies; do not use for sensitive accounts.
-# Generated at: 2026-11-23T01:36:29Z
+# Generated at: 2026-11-23T12:19:47Z
 proxies:
   - name: "US-ISP-001 Arbuckle Communications, LLC Lone Grove"
     type: socks5
     server: 68.233.8.123
     port: 1080
     udp: true
-  - name: "US-ISP-002 Charter Communications Strongsville"
+  - name: "US-ISP-002 BrightRidge Johnson City"
+    type: socks5
+    server: 152.86.78.16
+    port: 1080
+    udp: true
+  - name: "US-ISP-003 Charter Communications Strongsville"
     type: socks5
     server: 74.131.237.22
     port: 1080
     udp: true
-  - name: "US-ISP-003 Cox Communications Inc. Phoenix"
+  - name: "US-ISP-004 Gainesville Regional Utilities Gainesville"
     type: socks5
-    server: 68.104.184.104
+    server: 66.231.128.103
     port: 1080
     udp: true
-  - name: "US-ISP-004 ITGLOBAL.COM NL B.V. Newark"
+  - name: "US-ISP-005 Indigital Telecom Goshen"
+    type: socks5
+    server: 66.170.46.17
+    port: 1080
+    udp: true
+  - name: "US-ISP-006 ITGLOBAL.COM NL B.V. Newark"
     type: socks5
     server: 31.44.5.192
     port: 1081
     udp: true
-  - name: "US-ISP-005 Level 3 Communications, Inc. Chicago"
+  - name: "US-ISP-007 KAMO Electric Cooperative Anderson"
     type: socks5
-    server: 8.40.19.147
+    server: 206.246.26.1
     port: 1080
     udp: true
-  - name: "US-ISP-006 Optimum Lake Havasu City"
+  - name: "US-ISP-008 KAMO Electric Cooperative Anderson"
+    type: socks5
+    server: 206.246.26.65
+    port: 1080
+    udp: true
+  - name: "US-ISP-009 Level 3 Communications, Inc. Chicago"
+    type: socks5
+    server: 8.40.19.133
+    port: 1080
+    udp: true
+  - name: "US-ISP-010 Optimum Kingman"
+    type: socks5
+    server: 24.121.73.10
+    port: 1080
+    udp: true
+  - name: "US-ISP-011 Optimum Lake Havasu City"
     type: socks5
     server: 24.121.176.155
     port: 1080
     udp: true
-  - name: "US-ISP-007 Spectrum Bakersfield"
+  - name: "US-ISP-012 Route 256 Sterling Heights"
     type: socks5
-    server: 71.44.207.66
+    server: 208.92.216.54
+    port: 1080
+    udp: true
+  - name: "US-ISP-013 Spectrum Austin"
+    type: socks5
+    server: 71.78.199.161
+    port: 1080
+    udp: true
+  - name: "US-ISP-014 Spectrum Austin"
+    type: socks5
+    server: 72.131.213.139
+    port: 1080
+    udp: true
+  - name: "US-ISP-015 Summit Broadband Naples"
+    type: socks5
+    server: 74.112.62.118
+    port: 1080
+    udp: true
+  - name: "US-ISP-016 Uniti Fiber Holdings Inc. Mobile"
+    type: socks5
+    server: 142.190.83.132
+    port: 1080
+    udp: true
+  - name: "US-ISP-017 Vexus Fiber Lubbock"
+    type: socks5
+    server: 38.172.125.42
     port: 1080
     udp: true

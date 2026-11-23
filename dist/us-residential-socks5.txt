@@ -1,11 +1,10 @@
 # Auto-generated SOCKS5 URIs for NekoBox / compatible clients.
-# Generated at: 2026-11-22T19:29:47Z
+# Generated at: 2026-11-23T01:36:29Z
 # Public unauthenticated proxies; availability and ISP classification can change.
-socks5://152.86.78.16:1080#US-ISP-001%20BrightRidge%20Johnson%20City
+socks5://68.233.8.123:1080#US-ISP-001%20Arbuckle%20Communications%2C%20LLC%20Lone%20Grove
 socks5://74.131.237.22:1080#US-ISP-002%20Charter%20Communications%20Strongsville
-socks5://70.176.94.21:1080#US-ISP-003%20Cox%20Communications%20Inc.%20Scottsdale
-socks5://66.231.128.103:1080#US-ISP-004%20Gainesville%20Regional%20Utilities%20Gainesville
-socks5://66.170.46.17:1080#US-ISP-005%20Indigital%20Telecom%20Goshen
-socks5://67.210.146.50:11080#US-ISP-006%20JAB%20Wireless%2C%20INC.%20Princeton
-socks5://8.40.19.147:1080#US-ISP-007%20Level%203%20Communications%2C%20Inc.%20Chicago
-socks5://67.204.153.223:1080#US-ISP-008%20TDS%20TELECOM%20Bend
+socks5://68.104.184.104:1080#US-ISP-003%20Cox%20Communications%20Inc.%20Phoenix
+socks5://31.44.5.192:1081#US-ISP-004%20ITGLOBAL.COM%20NL%20B.V.%20Newark
+socks5://8.40.19.147:1080#US-ISP-005%20Level%203%20Communications%2C%20Inc.%20Chicago
+socks5://24.121.176.155:1080#US-ISP-006%20Optimum%20Lake%20Havasu%20City
+socks5://71.44.207.66:1080#US-ISP-007%20Spectrum%20Bakersfield

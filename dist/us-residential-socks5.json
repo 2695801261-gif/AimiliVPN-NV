@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-22T19:29:47Z",
-  "count": 8,
+  "generated_at": "2026-11-23T01:36:29Z",
+  "count": 7,
   "criteria": [
     "United States",
     "hosting=false",
@@ -15,13 +15,13 @@
   },
   "nodes": [
     {
-      "name": "US - BrightRidge - Johnson City",
-      "server": "152.86.78.16",
+      "name": "US - Arbuckle Communications, LLC - Lone Grove",
+      "server": "68.233.8.123",
       "port": 1080,
-      "isp": "BrightRidge",
-      "asn": "AS22987 BrightRidge",
-      "city": "Johnson City",
-      "region": "Tennessee",
+      "isp": "Arbuckle Communications, LLC",
+      "asn": "AS54075 Arbuckle Communications, LLC",
+      "city": "Lone Grove",
+      "region": "Oklahoma",
       "country": "United States"
     },
     {
@@ -35,43 +35,23 @@
       "country": "United States"
     },
     {
-      "name": "US - Cox Communications Inc. - Scottsdale",
-      "server": "70.176.94.21",
+      "name": "US - Cox Communications Inc. - Phoenix",
+      "server": "68.104.184.104",
       "port": 1080,
       "isp": "Cox Communications Inc.",
       "asn": "AS22773 Cox Communications Inc.",
-      "city": "Scottsdale",
+      "city": "Phoenix",
       "region": "Arizona",
       "country": "United States"
     },
     {
-      "name": "US - Gainesville Regional Utilities - Gainesville",
-      "server": "66.231.128.103",
-      "port": 1080,
-      "isp": "Gainesville Regional Utilities",
-      "asn": "AS10674 Gainesville Regional Utilities",
-      "city": "Gainesville",
-      "region": "Florida",
-      "country": "United States"
-    },
-    {
-      "name": "US - Indigital Telecom - Goshen",
-      "server": "66.170.46.17",
-      "port": 1080,
-      "isp": "Indigital Telecom",
-      "asn": "AS16698 NP Tech",
-      "city": "Goshen",
-      "region": "Indiana",
-      "country": "United States"
-    },
-    {
-      "name": "US - JAB Wireless, INC. - Princeton",
-      "server": "67.210.146.50",
-      "port": 11080,
-      "isp": "JAB Wireless, INC.",
-      "asn": "AS17306 JAB Wireless, INC.",
-      "city": "Princeton",
-      "region": "Texas",
+      "name": "US - ITGLOBAL.COM NL B.V. - Newark",
+      "server": "31.44.5.192",
+      "port": 1081,
+      "isp": "ITGLOBAL.COM NL B.V.",
+      "asn": "AS208951 ITGLOBAL.COM",
+      "city": "Newark",
+      "region": "New Jersey",
       "country": "United States"
     },
     {
@@ -85,13 +65,23 @@
       "country": "United States"
     },
     {
-      "name": "US - TDS TELECOM - Bend",
-      "server": "67.204.153.223",
+      "name": "US - Optimum - Lake Havasu City",
+      "server": "24.121.176.155",
       "port": 1080,
-      "isp": "TDS TELECOM",
-      "asn": "AS4181 TDS TELECOM",
-      "city": "Bend",
-      "region": "Oregon",
+      "isp": "Optimum",
+      "asn": "AS19108 Optimum",
+      "city": "Lake Havasu City",
+      "region": "Arizona",
+      "country": "United States"
+    },
+    {
+      "name": "US - Spectrum - Bakersfield",
+      "server": "71.44.207.66",
+      "port": 1080,
+      "isp": "Spectrum",
+      "asn": "AS33363 Charter Communications, Inc",
+      "city": "Bakersfield",
+      "region": "California",
       "country": "United States"
     }
   ]

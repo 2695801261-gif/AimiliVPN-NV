@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-24T02:09:05Z",
-  "count": 7,
+  "generated_at": "2026-11-24T13:33:46Z",
+  "count": 10,
   "criteria": [
     "United States",
     "hosting=false",
@@ -15,12 +15,52 @@
   },
   "nodes": [
     {
-      "name": "US - Big River Telephone - Poplar Bluff",
-      "server": "204.8.189.118",
+      "name": "US - Arbuckle Communications, LLC - Lone Grove",
+      "server": "68.233.8.123",
       "port": 1080,
-      "isp": "Big River Telephone",
-      "asn": "AS27419 Big River Telephone Company, LLC",
-      "city": "Poplar Bluff",
+      "isp": "Arbuckle Communications, LLC",
+      "asn": "AS54075 Arbuckle Communications, LLC",
+      "city": "Lone Grove",
+      "region": "Oklahoma",
+      "country": "United States"
+    },
+    {
+      "name": "US - Aureon Network Services - Boone",
+      "server": "216.51.177.106",
+      "port": 1080,
+      "isp": "Aureon Network Services",
+      "asn": "AS5056 Aureon Network Services",
+      "city": "Boone",
+      "region": "Iowa",
+      "country": "United States"
+    },
+    {
+      "name": "US - BrightRidge - Johnson City",
+      "server": "152.86.78.16",
+      "port": 1080,
+      "isp": "BrightRidge",
+      "asn": "AS22987 BrightRidge",
+      "city": "Johnson City",
+      "region": "Tennessee",
+      "country": "United States"
+    },
+    {
+      "name": "US - Centrilogic - Dallas",
+      "server": "192.254.65.12",
+      "port": 1080,
+      "isp": "Centrilogic",
+      "asn": "AS31863 Centrilogic, Inc.",
+      "city": "Dallas",
+      "region": "Texas",
+      "country": "United States"
+    },
+    {
+      "name": "US - Charter Communications LLC - Overland",
+      "server": "24.240.201.212",
+      "port": 1080,
+      "isp": "Charter Communications LLC",
+      "asn": "AS20115 Charter Communications LLC",
+      "city": "Overland",
       "region": "Missouri",
       "country": "United States"
     },
@@ -35,53 +75,43 @@
       "country": "United States"
     },
     {
-      "name": "US - ITGLOBAL.COM NL B.V. - Newark",
-      "server": "31.44.5.192",
-      "port": 1081,
-      "isp": "ITGLOBAL.COM NL B.V.",
-      "asn": "AS208951 ITGLOBAL.COM",
-      "city": "Newark",
-      "region": "New Jersey",
+      "name": "US - Indigital Telecom - Goshen",
+      "server": "66.170.46.17",
+      "port": 1080,
+      "isp": "Indigital Telecom",
+      "asn": "AS16698 NP Tech",
+      "city": "Goshen",
+      "region": "Indiana",
       "country": "United States"
     },
     {
-      "name": "US - Spectrum - Austin",
-      "server": "72.131.213.139",
-      "port": 1080,
-      "isp": "Spectrum",
-      "asn": "AS11427 Charter Communications Inc",
-      "city": "Austin",
+      "name": "US - JAB Wireless, INC. - Princeton",
+      "server": "67.210.146.50",
+      "port": 11080,
+      "isp": "JAB Wireless, INC.",
+      "asn": "AS17306 JAB Wireless, INC.",
+      "city": "Princeton",
       "region": "Texas",
       "country": "United States"
     },
     {
-      "name": "US - Summit Broadband - Naples",
-      "server": "74.112.62.118",
+      "name": "US - Level 3 Communications, Inc. - Chicago",
+      "server": "8.40.19.133",
       "port": 1080,
-      "isp": "Summit Broadband",
-      "asn": "AS23314 Summit Broadband",
-      "city": "Naples",
-      "region": "Florida",
+      "isp": "Level 3 Communications, Inc.",
+      "asn": "AS3356 Level 3 Parent, LLC",
+      "city": "Chicago",
+      "region": "Illinois",
       "country": "United States"
     },
     {
-      "name": "US - TDS TELECOM - Bend",
-      "server": "67.204.153.223",
-      "port": 1080,
-      "isp": "TDS TELECOM",
-      "asn": "AS4181 TDS TELECOM",
-      "city": "Bend",
-      "region": "Oregon",
-      "country": "United States"
-    },
-    {
-      "name": "US - Uniti Fiber Holdings Inc. - Mobile",
-      "server": "142.190.83.132",
+      "name": "US - Uniti Fiber Holdings Inc. - Gulfport",
+      "server": "142.190.95.154",
       "port": 1080,
       "isp": "Uniti Fiber Holdings Inc.",
       "asn": "AS13760 Uniti Fiber Holdings Inc.",
-      "city": "Mobile",
-      "region": "Alabama",
+      "city": "Gulfport",
+      "region": "Mississippi",
       "country": "United States"
     }
   ]

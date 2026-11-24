@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-23T12:19:47Z",
-  "count": 17,
+  "generated_at": "2026-11-24T02:09:05Z",
+  "count": 7,
   "criteria": [
     "United States",
     "hosting=false",
@@ -15,33 +15,13 @@
   },
   "nodes": [
     {
-      "name": "US - Arbuckle Communications, LLC - Lone Grove",
-      "server": "68.233.8.123",
+      "name": "US - Big River Telephone - Poplar Bluff",
+      "server": "204.8.189.118",
       "port": 1080,
-      "isp": "Arbuckle Communications, LLC",
-      "asn": "AS54075 Arbuckle Communications, LLC",
-      "city": "Lone Grove",
-      "region": "Oklahoma",
-      "country": "United States"
-    },
-    {
-      "name": "US - BrightRidge - Johnson City",
-      "server": "152.86.78.16",
-      "port": 1080,
-      "isp": "BrightRidge",
-      "asn": "AS22987 BrightRidge",
-      "city": "Johnson City",
-      "region": "Tennessee",
-      "country": "United States"
-    },
-    {
-      "name": "US - Charter Communications - Strongsville",
-      "server": "74.131.237.22",
-      "port": 1080,
-      "isp": "Charter Communications",
-      "asn": "AS10796 Charter Communications Inc",
-      "city": "Strongsville",
-      "region": "Ohio",
+      "isp": "Big River Telephone",
+      "asn": "AS27419 Big River Telephone Company, LLC",
+      "city": "Poplar Bluff",
+      "region": "Missouri",
       "country": "United States"
     },
     {
@@ -55,16 +35,6 @@
       "country": "United States"
     },
     {
-      "name": "US - Indigital Telecom - Goshen",
-      "server": "66.170.46.17",
-      "port": 1080,
-      "isp": "Indigital Telecom",
-      "asn": "AS16698 NP Tech",
-      "city": "Goshen",
-      "region": "Indiana",
-      "country": "United States"
-    },
-    {
       "name": "US - ITGLOBAL.COM NL B.V. - Newark",
       "server": "31.44.5.192",
       "port": 1081,
@@ -72,76 +42,6 @@
       "asn": "AS208951 ITGLOBAL.COM",
       "city": "Newark",
       "region": "New Jersey",
-      "country": "United States"
-    },
-    {
-      "name": "US - KAMO Electric Cooperative - Anderson",
-      "server": "206.246.26.1",
-      "port": 1080,
-      "isp": "KAMO Electric Cooperative",
-      "asn": "AS27258 KAMO Electric Cooperative, Inc.",
-      "city": "Anderson",
-      "region": "Missouri",
-      "country": "United States"
-    },
-    {
-      "name": "US - KAMO Electric Cooperative - Anderson",
-      "server": "206.246.26.65",
-      "port": 1080,
-      "isp": "KAMO Electric Cooperative",
-      "asn": "AS27258 KAMO Electric Cooperative, Inc.",
-      "city": "Anderson",
-      "region": "Missouri",
-      "country": "United States"
-    },
-    {
-      "name": "US - Level 3 Communications, Inc. - Chicago",
-      "server": "8.40.19.133",
-      "port": 1080,
-      "isp": "Level 3 Communications, Inc.",
-      "asn": "AS3356 Level 3 Parent, LLC",
-      "city": "Chicago",
-      "region": "Illinois",
-      "country": "United States"
-    },
-    {
-      "name": "US - Optimum - Kingman",
-      "server": "24.121.73.10",
-      "port": 1080,
-      "isp": "Optimum",
-      "asn": "AS19108 Optimum",
-      "city": "Kingman",
-      "region": "Arizona",
-      "country": "United States"
-    },
-    {
-      "name": "US - Optimum - Lake Havasu City",
-      "server": "24.121.176.155",
-      "port": 1080,
-      "isp": "Optimum",
-      "asn": "AS19108 Optimum",
-      "city": "Lake Havasu City",
-      "region": "Arizona",
-      "country": "United States"
-    },
-    {
-      "name": "US - Route 256 - Sterling Heights",
-      "server": "208.92.216.54",
-      "port": 1080,
-      "isp": "Route 256",
-      "asn": "AS53292 ManagedWay",
-      "city": "Sterling Heights",
-      "region": "Michigan",
-      "country": "United States"
-    },
-    {
-      "name": "US - Spectrum - Austin",
-      "server": "71.78.199.161",
-      "port": 1080,
-      "isp": "Spectrum",
-      "asn": "AS11427 Charter Communications Inc",
-      "city": "Austin",
-      "region": "Texas",
       "country": "United States"
     },
     {
@@ -165,6 +65,16 @@
       "country": "United States"
     },
     {
+      "name": "US - TDS TELECOM - Bend",
+      "server": "67.204.153.223",
+      "port": 1080,
+      "isp": "TDS TELECOM",
+      "asn": "AS4181 TDS TELECOM",
+      "city": "Bend",
+      "region": "Oregon",
+      "country": "United States"
+    },
+    {
       "name": "US - Uniti Fiber Holdings Inc. - Mobile",
       "server": "142.190.83.132",
       "port": 1080,
@@ -172,16 +82,6 @@
       "asn": "AS13760 Uniti Fiber Holdings Inc.",
       "city": "Mobile",
       "region": "Alabama",
-      "country": "United States"
-    },
-    {
-      "name": "US - Vexus Fiber - Lubbock",
-      "server": "38.172.125.42",
-      "port": 1080,
-      "isp": "Vexus Fiber",
-      "asn": "AS13693 Vexus Fiber",
-      "city": "Lubbock",
-      "region": "Texas",
       "country": "United States"
     }
   ]

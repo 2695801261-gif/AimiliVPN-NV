@@ -1,53 +1,38 @@
 # Auto-generated. Public unauthenticated SOCKS5 proxies; do not use for sensitive accounts.
-# Generated at: 2026-11-24T13:33:46Z
+# Generated at: 2026-11-24T23:52:04Z
 proxies:
-  - name: "US-ISP-001 Arbuckle Communications, LLC Lone Grove"
+  - name: "US-ISP-001 Free Range Internet LLC Ajo"
     type: socks5
-    server: 68.233.8.123
+    server: 23.191.176.193
     port: 1080
     udp: true
-  - name: "US-ISP-002 Aureon Network Services Boone"
-    type: socks5
-    server: 216.51.177.106
-    port: 1080
-    udp: true
-  - name: "US-ISP-003 BrightRidge Johnson City"
-    type: socks5
-    server: 152.86.78.16
-    port: 1080
-    udp: true
-  - name: "US-ISP-004 Centrilogic Dallas"
-    type: socks5
-    server: 192.254.65.12
-    port: 1080
-    udp: true
-  - name: "US-ISP-005 Charter Communications LLC Overland"
-    type: socks5
-    server: 24.240.201.212
-    port: 1080
-    udp: true
-  - name: "US-ISP-006 Gainesville Regional Utilities Gainesville"
-    type: socks5
-    server: 66.231.128.103
-    port: 1080
-    udp: true
-  - name: "US-ISP-007 Indigital Telecom Goshen"
+  - name: "US-ISP-002 Indigital Telecom Goshen"
     type: socks5
     server: 66.170.46.17
     port: 1080
     udp: true
-  - name: "US-ISP-008 JAB Wireless, INC. Princeton"
+  - name: "US-ISP-003 ITGLOBAL.COM NL B.V. Newark"
     type: socks5
-    server: 67.210.146.50
-    port: 11080
+    server: 31.44.5.192
+    port: 1081
     udp: true
-  - name: "US-ISP-009 Level 3 Communications, Inc. Chicago"
+  - name: "US-ISP-004 Level 3 Communications, Inc. Chicago"
     type: socks5
     server: 8.40.19.133
     port: 1080
     udp: true
-  - name: "US-ISP-010 Uniti Fiber Holdings Inc. Gulfport"
+  - name: "US-ISP-005 Summit Broadband Naples"
     type: socks5
-    server: 142.190.95.154
+    server: 74.112.62.118
+    port: 1080
+    udp: true
+  - name: "US-ISP-006 Uniti Fiber Holdings Inc. Mobile"
+    type: socks5
+    server: 142.190.83.132
+    port: 1080
+    udp: true
+  - name: "US-ISP-007 Velocihost Inc. Miami"
+    type: socks5
+    server: 192.171.18.128
     port: 1080
     udp: true

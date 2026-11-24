@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-24T13:33:46Z",
-  "count": 10,
+  "generated_at": "2026-11-24T23:52:04Z",
+  "count": 7,
   "criteria": [
     "United States",
     "hosting=false",
@@ -15,63 +15,13 @@
   },
   "nodes": [
     {
-      "name": "US - Arbuckle Communications, LLC - Lone Grove",
-      "server": "68.233.8.123",
+      "name": "US - Free Range Internet LLC - Ajo",
+      "server": "23.191.176.193",
       "port": 1080,
-      "isp": "Arbuckle Communications, LLC",
-      "asn": "AS54075 Arbuckle Communications, LLC",
-      "city": "Lone Grove",
-      "region": "Oklahoma",
-      "country": "United States"
-    },
-    {
-      "name": "US - Aureon Network Services - Boone",
-      "server": "216.51.177.106",
-      "port": 1080,
-      "isp": "Aureon Network Services",
-      "asn": "AS5056 Aureon Network Services",
-      "city": "Boone",
-      "region": "Iowa",
-      "country": "United States"
-    },
-    {
-      "name": "US - BrightRidge - Johnson City",
-      "server": "152.86.78.16",
-      "port": 1080,
-      "isp": "BrightRidge",
-      "asn": "AS22987 BrightRidge",
-      "city": "Johnson City",
-      "region": "Tennessee",
-      "country": "United States"
-    },
-    {
-      "name": "US - Centrilogic - Dallas",
-      "server": "192.254.65.12",
-      "port": 1080,
-      "isp": "Centrilogic",
-      "asn": "AS31863 Centrilogic, Inc.",
-      "city": "Dallas",
-      "region": "Texas",
-      "country": "United States"
-    },
-    {
-      "name": "US - Charter Communications LLC - Overland",
-      "server": "24.240.201.212",
-      "port": 1080,
-      "isp": "Charter Communications LLC",
-      "asn": "AS20115 Charter Communications LLC",
-      "city": "Overland",
-      "region": "Missouri",
-      "country": "United States"
-    },
-    {
-      "name": "US - Gainesville Regional Utilities - Gainesville",
-      "server": "66.231.128.103",
-      "port": 1080,
-      "isp": "Gainesville Regional Utilities",
-      "asn": "AS10674 Gainesville Regional Utilities",
-      "city": "Gainesville",
-      "region": "Florida",
+      "isp": "Free Range Internet LLC",
+      "asn": "AS400142 Free Range Internet LLC",
+      "city": "Ajo",
+      "region": "Arizona",
       "country": "United States"
     },
     {
@@ -85,13 +35,13 @@
       "country": "United States"
     },
     {
-      "name": "US - JAB Wireless, INC. - Princeton",
-      "server": "67.210.146.50",
-      "port": 11080,
-      "isp": "JAB Wireless, INC.",
-      "asn": "AS17306 JAB Wireless, INC.",
-      "city": "Princeton",
-      "region": "Texas",
+      "name": "US - ITGLOBAL.COM NL B.V. - Newark",
+      "server": "31.44.5.192",
+      "port": 1081,
+      "isp": "ITGLOBAL.COM NL B.V.",
+      "asn": "AS208951 ITGLOBAL.COM",
+      "city": "Newark",
+      "region": "New Jersey",
       "country": "United States"
     },
     {
@@ -105,13 +55,33 @@
       "country": "United States"
     },
     {
-      "name": "US - Uniti Fiber Holdings Inc. - Gulfport",
-      "server": "142.190.95.154",
+      "name": "US - Summit Broadband - Naples",
+      "server": "74.112.62.118",
+      "port": 1080,
+      "isp": "Summit Broadband",
+      "asn": "AS23314 Summit Broadband",
+      "city": "Naples",
+      "region": "Florida",
+      "country": "United States"
+    },
+    {
+      "name": "US - Uniti Fiber Holdings Inc. - Mobile",
+      "server": "142.190.83.132",
       "port": 1080,
       "isp": "Uniti Fiber Holdings Inc.",
       "asn": "AS13760 Uniti Fiber Holdings Inc.",
-      "city": "Gulfport",
-      "region": "Mississippi",
+      "city": "Mobile",
+      "region": "Alabama",
+      "country": "United States"
+    },
+    {
+      "name": "US - Velocihost Inc. - Miami",
+      "server": "192.171.18.128",
+      "port": 1080,
+      "isp": "Velocihost Inc.",
+      "asn": "AS63452 Velocihost Inc.",
+      "city": "Miami",
+      "region": "Florida",
       "country": "United States"
     }
   ]

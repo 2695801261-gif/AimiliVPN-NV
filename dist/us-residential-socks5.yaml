@@ -1,23 +1,33 @@
 # Auto-generated. Public unauthenticated SOCKS5 proxies; do not use for sensitive accounts.
-# Generated at: 2026-11-25T08:20:57Z
+# Generated at: 2026-11-25T19:10:25Z
 proxies:
-  - name: "US-ISP-001 Big River Telephone Poplar Bluff"
+  - name: "US-ISP-001 Aureon Network Services Boone"
+    type: socks5
+    server: 216.51.177.106
+    port: 1080
+    udp: true
+  - name: "US-ISP-002 Big River Telephone Poplar Bluff"
     type: socks5
     server: 204.8.189.118
     port: 1080
     udp: true
-  - name: "US-ISP-002 Cox Communications Inc. Norfolk"
+  - name: "US-ISP-003 Cox Communications Inc. Phoenix"
     type: socks5
-    server: 98.175.31.222
-    port: 4145
-    udp: true
-  - name: "US-ISP-003 Optimum Lake Havasu City"
-    type: socks5
-    server: 24.121.176.155
+    server: 68.104.184.104
     port: 1080
     udp: true
-  - name: "US-ISP-004 Route 256 Sterling Heights"
+  - name: "US-ISP-004 ITGLOBAL.COM NL B.V. Newark"
     type: socks5
-    server: 208.92.216.54
+    server: 31.44.5.192
+    port: 1081
+    udp: true
+  - name: "US-ISP-005 KAMO Electric Cooperative Anderson"
+    type: socks5
+    server: 206.246.26.65
+    port: 1080
+    udp: true
+  - name: "US-ISP-006 TDS TELECOM Bend"
+    type: socks5
+    server: 67.204.153.223
     port: 1080
     udp: true

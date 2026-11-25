@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-25T08:20:57Z",
-  "count": 4,
+  "generated_at": "2026-11-25T19:10:25Z",
+  "count": 6,
   "criteria": [
     "United States",
     "hosting=false",
@@ -15,6 +15,16 @@
   },
   "nodes": [
     {
+      "name": "US - Aureon Network Services - Boone",
+      "server": "216.51.177.106",
+      "port": 1080,
+      "isp": "Aureon Network Services",
+      "asn": "AS5056 Aureon Network Services",
+      "city": "Boone",
+      "region": "Iowa",
+      "country": "United States"
+    },
+    {
       "name": "US - Big River Telephone - Poplar Bluff",
       "server": "204.8.189.118",
       "port": 1080,
@@ -25,33 +35,43 @@
       "country": "United States"
     },
     {
-      "name": "US - Cox Communications Inc. - Norfolk",
-      "server": "98.175.31.222",
-      "port": 4145,
+      "name": "US - Cox Communications Inc. - Phoenix",
+      "server": "68.104.184.104",
+      "port": 1080,
       "isp": "Cox Communications Inc.",
       "asn": "AS22773 Cox Communications Inc.",
-      "city": "Norfolk",
-      "region": "Virginia",
-      "country": "United States"
-    },
-    {
-      "name": "US - Optimum - Lake Havasu City",
-      "server": "24.121.176.155",
-      "port": 1080,
-      "isp": "Optimum",
-      "asn": "AS19108 Optimum",
-      "city": "Lake Havasu City",
+      "city": "Phoenix",
       "region": "Arizona",
       "country": "United States"
     },
     {
-      "name": "US - Route 256 - Sterling Heights",
-      "server": "208.92.216.54",
+      "name": "US - ITGLOBAL.COM NL B.V. - Newark",
+      "server": "31.44.5.192",
+      "port": 1081,
+      "isp": "ITGLOBAL.COM NL B.V.",
+      "asn": "AS208951 ITGLOBAL.COM",
+      "city": "Newark",
+      "region": "New Jersey",
+      "country": "United States"
+    },
+    {
+      "name": "US - KAMO Electric Cooperative - Anderson",
+      "server": "206.246.26.65",
       "port": 1080,
-      "isp": "Route 256",
-      "asn": "AS53292 ManagedWay",
-      "city": "Sterling Heights",
-      "region": "Michigan",
+      "isp": "KAMO Electric Cooperative",
+      "asn": "AS27258 KAMO Electric Cooperative, Inc.",
+      "city": "Anderson",
+      "region": "Missouri",
+      "country": "United States"
+    },
+    {
+      "name": "US - TDS TELECOM - Bend",
+      "server": "67.204.153.223",
+      "port": 1080,
+      "isp": "TDS TELECOM",
+      "asn": "AS4181 TDS TELECOM",
+      "city": "Bend",
+      "region": "Oregon",
       "country": "United States"
     }
   ]

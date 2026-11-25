@@ -1,38 +1,23 @@
 # Auto-generated. Public unauthenticated SOCKS5 proxies; do not use for sensitive accounts.
-# Generated at: 2026-11-24T23:52:04Z
+# Generated at: 2026-11-25T08:20:57Z
 proxies:
-  - name: "US-ISP-001 Free Range Internet LLC Ajo"
+  - name: "US-ISP-001 Big River Telephone Poplar Bluff"
     type: socks5
-    server: 23.191.176.193
+    server: 204.8.189.118
     port: 1080
     udp: true
-  - name: "US-ISP-002 Indigital Telecom Goshen"
+  - name: "US-ISP-002 Cox Communications Inc. Norfolk"
     type: socks5
-    server: 66.170.46.17
+    server: 98.175.31.222
+    port: 4145
+    udp: true
+  - name: "US-ISP-003 Optimum Lake Havasu City"
+    type: socks5
+    server: 24.121.176.155
     port: 1080
     udp: true
-  - name: "US-ISP-003 ITGLOBAL.COM NL B.V. Newark"
+  - name: "US-ISP-004 Route 256 Sterling Heights"
     type: socks5
-    server: 31.44.5.192
-    port: 1081
-    udp: true
-  - name: "US-ISP-004 Level 3 Communications, Inc. Chicago"
-    type: socks5
-    server: 8.40.19.133
-    port: 1080
-    udp: true
-  - name: "US-ISP-005 Summit Broadband Naples"
-    type: socks5
-    server: 74.112.62.118
-    port: 1080
-    udp: true
-  - name: "US-ISP-006 Uniti Fiber Holdings Inc. Mobile"
-    type: socks5
-    server: 142.190.83.132
-    port: 1080
-    udp: true
-  - name: "US-ISP-007 Velocihost Inc. Miami"
-    type: socks5
-    server: 192.171.18.128
+    server: 208.92.216.54
     port: 1080
     udp: true

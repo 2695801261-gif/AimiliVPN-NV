@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-24T23:52:04Z",
-  "count": 7,
+  "generated_at": "2026-11-25T08:20:57Z",
+  "count": 4,
   "criteria": [
     "United States",
     "hosting=false",
@@ -15,73 +15,43 @@
   },
   "nodes": [
     {
-      "name": "US - Free Range Internet LLC - Ajo",
-      "server": "23.191.176.193",
+      "name": "US - Big River Telephone - Poplar Bluff",
+      "server": "204.8.189.118",
       "port": 1080,
-      "isp": "Free Range Internet LLC",
-      "asn": "AS400142 Free Range Internet LLC",
-      "city": "Ajo",
+      "isp": "Big River Telephone",
+      "asn": "AS27419 Big River Telephone Company, LLC",
+      "city": "Poplar Bluff",
+      "region": "Missouri",
+      "country": "United States"
+    },
+    {
+      "name": "US - Cox Communications Inc. - Norfolk",
+      "server": "98.175.31.222",
+      "port": 4145,
+      "isp": "Cox Communications Inc.",
+      "asn": "AS22773 Cox Communications Inc.",
+      "city": "Norfolk",
+      "region": "Virginia",
+      "country": "United States"
+    },
+    {
+      "name": "US - Optimum - Lake Havasu City",
+      "server": "24.121.176.155",
+      "port": 1080,
+      "isp": "Optimum",
+      "asn": "AS19108 Optimum",
+      "city": "Lake Havasu City",
       "region": "Arizona",
       "country": "United States"
     },
     {
-      "name": "US - Indigital Telecom - Goshen",
-      "server": "66.170.46.17",
+      "name": "US - Route 256 - Sterling Heights",
+      "server": "208.92.216.54",
       "port": 1080,
-      "isp": "Indigital Telecom",
-      "asn": "AS16698 NP Tech",
-      "city": "Goshen",
-      "region": "Indiana",
-      "country": "United States"
-    },
-    {
-      "name": "US - ITGLOBAL.COM NL B.V. - Newark",
-      "server": "31.44.5.192",
-      "port": 1081,
-      "isp": "ITGLOBAL.COM NL B.V.",
-      "asn": "AS208951 ITGLOBAL.COM",
-      "city": "Newark",
-      "region": "New Jersey",
-      "country": "United States"
-    },
-    {
-      "name": "US - Level 3 Communications, Inc. - Chicago",
-      "server": "8.40.19.133",
-      "port": 1080,
-      "isp": "Level 3 Communications, Inc.",
-      "asn": "AS3356 Level 3 Parent, LLC",
-      "city": "Chicago",
-      "region": "Illinois",
-      "country": "United States"
-    },
-    {
-      "name": "US - Summit Broadband - Naples",
-      "server": "74.112.62.118",
-      "port": 1080,
-      "isp": "Summit Broadband",
-      "asn": "AS23314 Summit Broadband",
-      "city": "Naples",
-      "region": "Florida",
-      "country": "United States"
-    },
-    {
-      "name": "US - Uniti Fiber Holdings Inc. - Mobile",
-      "server": "142.190.83.132",
-      "port": 1080,
-      "isp": "Uniti Fiber Holdings Inc.",
-      "asn": "AS13760 Uniti Fiber Holdings Inc.",
-      "city": "Mobile",
-      "region": "Alabama",
-      "country": "United States"
-    },
-    {
-      "name": "US - Velocihost Inc. - Miami",
-      "server": "192.171.18.128",
-      "port": 1080,
-      "isp": "Velocihost Inc.",
-      "asn": "AS63452 Velocihost Inc.",
-      "city": "Miami",
-      "region": "Florida",
+      "isp": "Route 256",
+      "asn": "AS53292 ManagedWay",
+      "city": "Sterling Heights",
+      "region": "Michigan",
       "country": "United States"
     }
   ]

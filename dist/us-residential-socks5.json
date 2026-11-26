@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-25T19:10:25Z",
-  "count": 6,
+  "generated_at": "2026-11-26T03:31:04Z",
+  "count": 10,
   "criteria": [
     "United States",
     "hosting=false",
@@ -15,33 +15,53 @@
   },
   "nodes": [
     {
-      "name": "US - Aureon Network Services - Boone",
-      "server": "216.51.177.106",
+      "name": "US - Charter Communications - Strongsville",
+      "server": "74.131.237.22",
       "port": 1080,
-      "isp": "Aureon Network Services",
-      "asn": "AS5056 Aureon Network Services",
-      "city": "Boone",
-      "region": "Iowa",
+      "isp": "Charter Communications",
+      "asn": "AS10796 Charter Communications Inc",
+      "city": "Strongsville",
+      "region": "Ohio",
       "country": "United States"
     },
     {
-      "name": "US - Big River Telephone - Poplar Bluff",
-      "server": "204.8.189.118",
+      "name": "US - Charter Communications LLC - Overland",
+      "server": "24.240.201.212",
       "port": 1080,
-      "isp": "Big River Telephone",
-      "asn": "AS27419 Big River Telephone Company, LLC",
-      "city": "Poplar Bluff",
+      "isp": "Charter Communications LLC",
+      "asn": "AS20115 Charter Communications LLC",
+      "city": "Overland",
       "region": "Missouri",
       "country": "United States"
     },
     {
-      "name": "US - Cox Communications Inc. - Phoenix",
-      "server": "68.104.184.104",
+      "name": "US - Crown Castle Fiber LLC - Los Angeles",
+      "server": "209.160.241.5",
       "port": 1080,
-      "isp": "Cox Communications Inc.",
-      "asn": "AS22773 Cox Communications Inc.",
-      "city": "Phoenix",
-      "region": "Arizona",
+      "isp": "Crown Castle Fiber LLC",
+      "asn": "AS46887 Zayo Bandwidth",
+      "city": "Los Angeles",
+      "region": "California",
+      "country": "United States"
+    },
+    {
+      "name": "US - Gainesville Regional Utilities - Gainesville",
+      "server": "66.231.128.103",
+      "port": 1080,
+      "isp": "Gainesville Regional Utilities",
+      "asn": "AS10674 Gainesville Regional Utilities",
+      "city": "Gainesville",
+      "region": "Florida",
+      "country": "United States"
+    },
+    {
+      "name": "US - Indigital Telecom - Goshen",
+      "server": "66.170.46.17",
+      "port": 1080,
+      "isp": "Indigital Telecom",
+      "asn": "AS16698 NP Tech",
+      "city": "Goshen",
+      "region": "Indiana",
       "country": "United States"
     },
     {
@@ -55,6 +75,16 @@
       "country": "United States"
     },
     {
+      "name": "US - JAB Wireless, INC. - Princeton",
+      "server": "67.210.146.50",
+      "port": 11080,
+      "isp": "JAB Wireless, INC.",
+      "asn": "AS17306 JAB Wireless, INC.",
+      "city": "Princeton",
+      "region": "Texas",
+      "country": "United States"
+    },
+    {
       "name": "US - KAMO Electric Cooperative - Anderson",
       "server": "206.246.26.65",
       "port": 1080,
@@ -65,13 +95,23 @@
       "country": "United States"
     },
     {
-      "name": "US - TDS TELECOM - Bend",
-      "server": "67.204.153.223",
+      "name": "US - Level 3 Communications, Inc. - Chicago",
+      "server": "8.40.19.133",
       "port": 1080,
-      "isp": "TDS TELECOM",
-      "asn": "AS4181 TDS TELECOM",
-      "city": "Bend",
-      "region": "Oregon",
+      "isp": "Level 3 Communications, Inc.",
+      "asn": "AS3356 Level 3 Parent, LLC",
+      "city": "Chicago",
+      "region": "Illinois",
+      "country": "United States"
+    },
+    {
+      "name": "US - Velocihost Inc. - Miami",
+      "server": "192.171.18.128",
+      "port": 1080,
+      "isp": "Velocihost Inc.",
+      "asn": "AS63452 Velocihost Inc.",
+      "city": "Miami",
+      "region": "Florida",
       "country": "United States"
     }
   ]

@@ -1,13 +1,12 @@
 # Auto-generated SOCKS5 URIs for NekoBox / compatible clients.
-# Generated at: 2026-11-26T03:31:04Z
+# Generated at: 2026-11-26T16:46:32Z
 # Public unauthenticated proxies; availability and ISP classification can change.
-socks5://74.131.237.22:1080#US-ISP-001%20Charter%20Communications%20Strongsville
-socks5://24.240.201.212:1080#US-ISP-002%20Charter%20Communications%20LLC%20Overland
-socks5://209.160.241.5:1080#US-ISP-003%20Crown%20Castle%20Fiber%20LLC%20Los%20Angeles
-socks5://66.231.128.103:1080#US-ISP-004%20Gainesville%20Regional%20Utilities%20Gainesville
-socks5://66.170.46.17:1080#US-ISP-005%20Indigital%20Telecom%20Goshen
-socks5://31.44.5.192:1081#US-ISP-006%20ITGLOBAL.COM%20NL%20B.V.%20Newark
-socks5://67.210.146.50:11080#US-ISP-007%20JAB%20Wireless%2C%20INC.%20Princeton
-socks5://206.246.26.65:1080#US-ISP-008%20KAMO%20Electric%20Cooperative%20Anderson
-socks5://8.40.19.133:1080#US-ISP-009%20Level%203%20Communications%2C%20Inc.%20Chicago
-socks5://192.171.18.128:1080#US-ISP-010%20Velocihost%20Inc.%20Miami
+socks5://216.51.177.106:1080#US-ISP-001%20Aureon%20Network%20Services%20Boone
+socks5://216.86.182.253:1080#US-ISP-002%20Cal.net%2C%20Inc.%20Vacaville
+socks5://24.240.201.212:1080#US-ISP-003%20Charter%20Communications%20LLC%20Overland
+socks5://31.44.5.192:1081#US-ISP-004%20ITGLOBAL.COM%20NL%20B.V.%20Newark
+socks5://67.210.146.50:11080#US-ISP-005%20JAB%20Wireless%2C%20INC.%20Princeton
+socks5://8.40.19.133:1080#US-ISP-006%20Level%203%20Communications%2C%20Inc.%20Chicago
+socks5://208.92.216.54:1080#US-ISP-007%20Route%20256%20Sterling%20Heights
+socks5://72.131.213.139:1080#US-ISP-008%20Spectrum%20Austin
+socks5://67.204.153.223:1080#US-ISP-009%20TDS%20TELECOM%20Bend

@@ -1,12 +1,15 @@
 # Auto-generated SOCKS5 URIs for NekoBox / compatible clients.
-# Generated at: 2026-11-27T01:42:01Z
+# Generated at: 2026-11-27T12:04:21Z
 # Public unauthenticated proxies; availability and ISP classification can change.
 socks5://68.233.8.123:1080#US-ISP-001%20Arbuckle%20Communications%2C%20LLC%20Lone%20Grove
-socks5://204.8.189.118:1080#US-ISP-002%20Big%20River%20Telephone%20Poplar%20Bluff
-socks5://152.86.78.16:1080#US-ISP-003%20BrightRidge%20Johnson%20City
-socks5://74.131.237.22:1080#US-ISP-004%20Charter%20Communications%20Strongsville
-socks5://24.240.201.212:1080#US-ISP-005%20Charter%20Communications%20LLC%20Overland
-socks5://68.104.184.104:1080#US-ISP-006%20Cox%20Communications%20Inc.%20Phoenix
-socks5://47.197.80.108:1080#US-ISP-007%20Frontier%20Communications%20Solutions%20St.%20Petersburg
-socks5://8.40.19.147:1080#US-ISP-008%20Level%203%20Communications%2C%20Inc.%20Chicago
-socks5://74.112.62.118:1080#US-ISP-009%20Summit%20Broadband%20Naples
+socks5://192.254.65.12:1080#US-ISP-002%20Centrilogic%20Dallas
+socks5://209.160.241.5:1080#US-ISP-003%20Crown%20Castle%20Fiber%20LLC%20Los%20Angeles
+socks5://66.231.128.103:1080#US-ISP-004%20Gainesville%20Regional%20Utilities%20Gainesville
+socks5://67.210.146.50:11080#US-ISP-005%20JAB%20Wireless%2C%20INC.%20Princeton
+socks5://8.40.19.147:1080#US-ISP-006%20Level%203%20Communications%2C%20Inc.%20Chicago
+socks5://24.121.73.10:1080#US-ISP-007%20Optimum%20Kingman
+socks5://71.44.207.66:1080#US-ISP-008%20Spectrum%20Bakersfield
+socks5://67.204.153.223:1080#US-ISP-009%20TDS%20TELECOM%20Bend
+socks5://142.190.83.132:1080#US-ISP-010%20Uniti%20Fiber%20Holdings%20Inc.%20Mobile
+socks5://192.171.18.128:1080#US-ISP-011%20Velocihost%20Inc.%20Miami
+socks5://38.172.125.42:1080#US-ISP-012%20Vexus%20Fiber%20Lubbock

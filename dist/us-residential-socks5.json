@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-27T01:42:01Z",
-  "count": 9,
+  "generated_at": "2026-11-27T12:04:21Z",
+  "count": 12,
   "criteria": [
     "United States",
     "hosting=false",
@@ -25,63 +25,43 @@
       "country": "United States"
     },
     {
-      "name": "US - Big River Telephone - Poplar Bluff",
-      "server": "204.8.189.118",
+      "name": "US - Centrilogic - Dallas",
+      "server": "192.254.65.12",
       "port": 1080,
-      "isp": "Big River Telephone",
-      "asn": "AS27419 Big River Telephone Company, LLC",
-      "city": "Poplar Bluff",
-      "region": "Missouri",
+      "isp": "Centrilogic",
+      "asn": "AS31863 Centrilogic, Inc.",
+      "city": "Dallas",
+      "region": "Texas",
       "country": "United States"
     },
     {
-      "name": "US - BrightRidge - Johnson City",
-      "server": "152.86.78.16",
+      "name": "US - Crown Castle Fiber LLC - Los Angeles",
+      "server": "209.160.241.5",
       "port": 1080,
-      "isp": "BrightRidge",
-      "asn": "AS22987 BrightRidge",
-      "city": "Johnson City",
-      "region": "Tennessee",
+      "isp": "Crown Castle Fiber LLC",
+      "asn": "AS46887 Zayo Bandwidth",
+      "city": "Los Angeles",
+      "region": "California",
       "country": "United States"
     },
     {
-      "name": "US - Charter Communications - Strongsville",
-      "server": "74.131.237.22",
+      "name": "US - Gainesville Regional Utilities - Gainesville",
+      "server": "66.231.128.103",
       "port": 1080,
-      "isp": "Charter Communications",
-      "asn": "AS10796 Charter Communications Inc",
-      "city": "Strongsville",
-      "region": "Ohio",
-      "country": "United States"
-    },
-    {
-      "name": "US - Charter Communications LLC - Overland",
-      "server": "24.240.201.212",
-      "port": 1080,
-      "isp": "Charter Communications LLC",
-      "asn": "AS20115 Charter Communications LLC",
-      "city": "Overland",
-      "region": "Missouri",
-      "country": "United States"
-    },
-    {
-      "name": "US - Cox Communications Inc. - Phoenix",
-      "server": "68.104.184.104",
-      "port": 1080,
-      "isp": "Cox Communications Inc.",
-      "asn": "AS22773 Cox Communications Inc.",
-      "city": "Phoenix",
-      "region": "Arizona",
-      "country": "United States"
-    },
-    {
-      "name": "US - Frontier Communications Solutions - St. Petersburg",
-      "server": "47.197.80.108",
-      "port": 1080,
-      "isp": "Frontier Communications Solutions",
-      "asn": "AS5650 Verizon Business",
-      "city": "St. Petersburg",
+      "isp": "Gainesville Regional Utilities",
+      "asn": "AS10674 Gainesville Regional Utilities",
+      "city": "Gainesville",
       "region": "Florida",
+      "country": "United States"
+    },
+    {
+      "name": "US - JAB Wireless, INC. - Princeton",
+      "server": "67.210.146.50",
+      "port": 11080,
+      "isp": "JAB Wireless, INC.",
+      "asn": "AS17306 JAB Wireless, INC.",
+      "city": "Princeton",
+      "region": "Texas",
       "country": "United States"
     },
     {
@@ -95,13 +75,63 @@
       "country": "United States"
     },
     {
-      "name": "US - Summit Broadband - Naples",
-      "server": "74.112.62.118",
+      "name": "US - Optimum - Kingman",
+      "server": "24.121.73.10",
       "port": 1080,
-      "isp": "Summit Broadband",
-      "asn": "AS23314 Summit Broadband",
-      "city": "Naples",
+      "isp": "Optimum",
+      "asn": "AS19108 Optimum",
+      "city": "Kingman",
+      "region": "Arizona",
+      "country": "United States"
+    },
+    {
+      "name": "US - Spectrum - Bakersfield",
+      "server": "71.44.207.66",
+      "port": 1080,
+      "isp": "Spectrum",
+      "asn": "AS33363 Charter Communications, Inc",
+      "city": "Bakersfield",
+      "region": "California",
+      "country": "United States"
+    },
+    {
+      "name": "US - TDS TELECOM - Bend",
+      "server": "67.204.153.223",
+      "port": 1080,
+      "isp": "TDS TELECOM",
+      "asn": "AS4181 TDS TELECOM",
+      "city": "Bend",
+      "region": "Oregon",
+      "country": "United States"
+    },
+    {
+      "name": "US - Uniti Fiber Holdings Inc. - Mobile",
+      "server": "142.190.83.132",
+      "port": 1080,
+      "isp": "Uniti Fiber Holdings Inc.",
+      "asn": "AS13760 Uniti Fiber Holdings Inc.",
+      "city": "Mobile",
+      "region": "Alabama",
+      "country": "United States"
+    },
+    {
+      "name": "US - Velocihost Inc. - Miami",
+      "server": "192.171.18.128",
+      "port": 1080,
+      "isp": "Velocihost Inc.",
+      "asn": "AS63452 Velocihost Inc.",
+      "city": "Miami",
       "region": "Florida",
+      "country": "United States"
+    },
+    {
+      "name": "US - Vexus Fiber - Lubbock",
+      "server": "38.172.125.42",
+      "port": 1080,
+      "isp": "Vexus Fiber",
+      "asn": "AS13693 Vexus Fiber",
+      "city": "Lubbock",
+      "region": "Texas",
       "country": "United States"
     }
   ]

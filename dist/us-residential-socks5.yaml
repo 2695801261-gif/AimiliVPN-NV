@@ -1,19 +1,19 @@
 # Auto-generated. Public unauthenticated SOCKS5 proxies; do not use for sensitive accounts.
-# Generated at: 2026-11-27T12:04:21Z
+# Generated at: 2026-11-27T21:08:06Z
 proxies:
-  - name: "US-ISP-001 Arbuckle Communications, LLC Lone Grove"
+  - name: "US-ISP-001 Aureon Network Services Boone"
     type: socks5
-    server: 68.233.8.123
+    server: 216.51.177.106
     port: 1080
     udp: true
-  - name: "US-ISP-002 Centrilogic Dallas"
+  - name: "US-ISP-002 Cal.net, Inc. Vacaville"
     type: socks5
-    server: 192.254.65.12
+    server: 216.86.182.253
     port: 1080
     udp: true
-  - name: "US-ISP-003 Crown Castle Fiber LLC Los Angeles"
+  - name: "US-ISP-003 Charter Communications LLC Overland"
     type: socks5
-    server: 209.160.241.5
+    server: 24.240.201.212
     port: 1080
     udp: true
   - name: "US-ISP-004 Gainesville Regional Utilities Gainesville"
@@ -21,43 +21,28 @@ proxies:
     server: 66.231.128.103
     port: 1080
     udp: true
-  - name: "US-ISP-005 JAB Wireless, INC. Princeton"
+  - name: "US-ISP-005 ITGLOBAL.COM NL B.V. Newark"
+    type: socks5
+    server: 31.44.5.192
+    port: 1081
+    udp: true
+  - name: "US-ISP-006 JAB Wireless, INC. Princeton"
     type: socks5
     server: 67.210.146.50
     port: 11080
     udp: true
-  - name: "US-ISP-006 Level 3 Communications, Inc. Chicago"
-    type: socks5
-    server: 8.40.19.147
-    port: 1080
-    udp: true
-  - name: "US-ISP-007 Optimum Kingman"
-    type: socks5
-    server: 24.121.73.10
-    port: 1080
-    udp: true
-  - name: "US-ISP-008 Spectrum Bakersfield"
+  - name: "US-ISP-007 Spectrum Bakersfield"
     type: socks5
     server: 71.44.207.66
     port: 1080
     udp: true
-  - name: "US-ISP-009 TDS TELECOM Bend"
+  - name: "US-ISP-008 Spectrum Austin"
     type: socks5
-    server: 67.204.153.223
+    server: 72.131.213.139
     port: 1080
     udp: true
-  - name: "US-ISP-010 Uniti Fiber Holdings Inc. Mobile"
-    type: socks5
-    server: 142.190.83.132
-    port: 1080
-    udp: true
-  - name: "US-ISP-011 Velocihost Inc. Miami"
+  - name: "US-ISP-009 Velocihost Inc. Miami"
     type: socks5
     server: 192.171.18.128
-    port: 1080
-    udp: true
-  - name: "US-ISP-012 Vexus Fiber Lubbock"
-    type: socks5
-    server: 38.172.125.42
     port: 1080
     udp: true

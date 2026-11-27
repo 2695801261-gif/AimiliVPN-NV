@@ -1,15 +1,12 @@
 # Auto-generated SOCKS5 URIs for NekoBox / compatible clients.
-# Generated at: 2026-11-27T12:04:21Z
+# Generated at: 2026-11-27T21:08:06Z
 # Public unauthenticated proxies; availability and ISP classification can change.
-socks5://68.233.8.123:1080#US-ISP-001%20Arbuckle%20Communications%2C%20LLC%20Lone%20Grove
-socks5://192.254.65.12:1080#US-ISP-002%20Centrilogic%20Dallas
-socks5://209.160.241.5:1080#US-ISP-003%20Crown%20Castle%20Fiber%20LLC%20Los%20Angeles
+socks5://216.51.177.106:1080#US-ISP-001%20Aureon%20Network%20Services%20Boone
+socks5://216.86.182.253:1080#US-ISP-002%20Cal.net%2C%20Inc.%20Vacaville
+socks5://24.240.201.212:1080#US-ISP-003%20Charter%20Communications%20LLC%20Overland
 socks5://66.231.128.103:1080#US-ISP-004%20Gainesville%20Regional%20Utilities%20Gainesville
-socks5://67.210.146.50:11080#US-ISP-005%20JAB%20Wireless%2C%20INC.%20Princeton
-socks5://8.40.19.147:1080#US-ISP-006%20Level%203%20Communications%2C%20Inc.%20Chicago
-socks5://24.121.73.10:1080#US-ISP-007%20Optimum%20Kingman
-socks5://71.44.207.66:1080#US-ISP-008%20Spectrum%20Bakersfield
-socks5://67.204.153.223:1080#US-ISP-009%20TDS%20TELECOM%20Bend
-socks5://142.190.83.132:1080#US-ISP-010%20Uniti%20Fiber%20Holdings%20Inc.%20Mobile
-socks5://192.171.18.128:1080#US-ISP-011%20Velocihost%20Inc.%20Miami
-socks5://38.172.125.42:1080#US-ISP-012%20Vexus%20Fiber%20Lubbock
+socks5://31.44.5.192:1081#US-ISP-005%20ITGLOBAL.COM%20NL%20B.V.%20Newark
+socks5://67.210.146.50:11080#US-ISP-006%20JAB%20Wireless%2C%20INC.%20Princeton
+socks5://71.44.207.66:1080#US-ISP-007%20Spectrum%20Bakersfield
+socks5://72.131.213.139:1080#US-ISP-008%20Spectrum%20Austin
+socks5://192.171.18.128:1080#US-ISP-009%20Velocihost%20Inc.%20Miami
